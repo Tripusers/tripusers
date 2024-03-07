@@ -130,6 +130,18 @@ const SlugForm = ({ onClick, packageName }: props) => {
         .then((response) => {
           if (response.ok) {
             console.log("Data successfully submitted!");
+            fetch("/api/sendEmail", {
+              method: "POST",
+              body: JSON.stringify({
+                data: { ...error.data, adult: adultCount, child: childCount },
+                type: "package",
+                senderEmail: error.data.email,
+              }),
+            }).then((response) => {
+              if (response.ok) {
+                alert("Email send check your email-in box");
+              }
+            });
             alert("Data successfully submitted!");
             reset();
           } else {
