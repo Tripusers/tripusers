@@ -32,7 +32,7 @@ const Form = () => {
     } else {
       setIsSubmit(true);
       fetch(
-        `${process.env.NEXT_PUBLIC_SANITY_APP_SCRIPT_URL}?action=addContact`,
+        `${process.env.NEXT_PUBLIC_FORM_APP_SCRIPT_URL}?action=addContact`,
         {
           method: "POST",
           body: JSON.stringify({
@@ -40,10 +40,10 @@ const Form = () => {
           }),
         }
       )
-        .then((response) => {
+        .then(async (response) => {
           if (response.ok) {
             console.log("Data successfully submitted!");
-            fetch("/api/sendEmail", {
+            await fetch("/api/sendEmail", {
               method: "POST",
               body: JSON.stringify({
                 data: error.data,

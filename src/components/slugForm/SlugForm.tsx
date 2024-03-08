@@ -127,13 +127,17 @@ const SlugForm = ({ onClick, packageName }: props) => {
           }),
         }
       )
-        .then((response) => {
+        .then(async (response) => {
           if (response.ok) {
             console.log("Data successfully submitted!");
-            fetch("/api/sendEmail", {
+            await fetch("/api/sendEmail", {
               method: "POST",
               body: JSON.stringify({
-                data: { ...error.data, adult: adultCount, child: childCount },
+                data: {
+                  ...error.data,
+                  adult: adultCount.toString(),
+                  child: childCount.toString(),
+                },
                 type: "package",
                 senderEmail: error.data.email,
               }),

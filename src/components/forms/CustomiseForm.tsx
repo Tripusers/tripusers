@@ -75,10 +75,10 @@ const CustomiseForm = ({ onClick }: props) => {
           }),
         }
       )
-        .then((response) => {
+        .then(async (response) => {
           if (response.ok) {
             console.log("Data successfully submitted!");
-            fetch("/api/sendEmail", {
+            await fetch("/api/sendEmail", {
               method: "POST",
               body: JSON.stringify({
                 data: error.data,
