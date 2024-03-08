@@ -63,7 +63,7 @@ const Admin = () => {
     setLoading(true);
     console.log("Fetching..");
 
-    fetch(`${process.env.NEXT_PUBLIC_FORM_APP_SCRIPT_URL}?action=getData`, {
+    fetch(`${process.env.NEXT_PUBLIC_FORM_APP_SCRIPT_URL}?action=getContact`, {
       method: "GET",
     })
       .then((response) => {
