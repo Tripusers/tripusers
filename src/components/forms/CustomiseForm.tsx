@@ -13,6 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ImageSize from "@/src/utils/image-utils";
 import DatePickerInput from "../default/datepicker";
+import CountryPhoneCodeSelector from "../default/phone";
 
 const schema = z.object({
   name: z.string().min(1),
@@ -55,6 +56,7 @@ const CustomiseForm = ({ onClick }: props) => {
     setError,
     reset,
     getValues,
+    setValue,
   } = useForm<formFields>();
   //console.log(errors);
   const [isSubmit, setIsSubmit] = useState(false);
@@ -94,6 +96,7 @@ const CustomiseForm = ({ onClick }: props) => {
             });
             alert("Data successfully submitted!");
             reset();
+            if (onClick) onClick();
           } else {
             console.error("Failed to submit data");
           }
@@ -177,7 +180,7 @@ const CustomiseForm = ({ onClick }: props) => {
               {errors.email && (
                 <p style={{ color: "tomato" }}>{errors.email.message}</p>
               )}
-              <input
+              <CountryPhoneCodeSelector
                 {...register("phone", {
                   required: "Phone No is required",
                   minLength: {
@@ -186,8 +189,7 @@ const CustomiseForm = ({ onClick }: props) => {
                       "Phone number must be at least 10 digits, and a country code is required.",
                   },
                 })}
-                type="text"
-                placeholder="Phone No"
+                setValue={setValue}
               />
               {errors.phone && (
                 <p style={{ color: "tomato" }}>{errors.phone.message}</p>

@@ -74,7 +74,8 @@
         }
 
         input,
-        textarea {
+        textarea,
+        select {
           width: 100%;
           background: none;
           border: 1px solid $dark;
@@ -185,8 +186,10 @@
         width: 300px;
 
         form {
+
           input,
-          textarea {
+          textarea,
+          select {
             border: 1px solid rgba(0, 0, 0, 0.5);
           }
 
