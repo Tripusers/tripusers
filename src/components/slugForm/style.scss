@@ -82,6 +82,22 @@
         }
       }
 
+      select {
+        width: 25%;
+        height: 35px;
+        padding: 0 10px;
+        background: none;
+        border: 1px solid $dark;
+        border-radius: 5px;
+        color: $dark;
+        font-size: 0.8rem;
+
+        &:focus {
+          outline: none;
+          border: 1px solid $yellow;
+        }
+      }
+
       .count-container {
         display: flex;
         flex-direction: column;
@@ -164,10 +180,12 @@
       form {
         .count-container {
           flex-direction: row;
+
           .counter {
             align-items: center;
           }
         }
+
         .contact-details {
           .top {
             flex-direction: row;
@@ -199,6 +217,7 @@
       form {
         button[type="submit"] {
           transition: background 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
           &:hover {
             background-color: $dark;
             color: $light;

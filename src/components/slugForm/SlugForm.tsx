@@ -18,6 +18,7 @@ import { getBrand } from "@/src/sanity/sanity-utils";
 import ImageSize from "@/src/utils/image-utils";
 import { z } from "zod";
 import { SubmitHandler, useForm } from "react-hook-form";
+import CountryPhoneCodeSelector from "../default/phone";
 
 interface props {
   onClick?: () => void;
@@ -104,6 +105,7 @@ const SlugForm = ({ onClick, packageName }: props) => {
     formState: { errors, isSubmitting },
     setError,
     reset,
+    setValue,
   } = useForm<formField>();
   const [isSubmit, setIsSubmit] = useState(false);
   const onSubmitForm: SubmitHandler<formField> = (data) => {
@@ -148,6 +150,7 @@ const SlugForm = ({ onClick, packageName }: props) => {
             });
             alert("Data successfully submitted!");
             reset();
+            if (onClick) onClick();
           } else {
             console.error("Failed to submit data");
           }
@@ -277,14 +280,15 @@ const SlugForm = ({ onClick, packageName }: props) => {
                   )}
                 </div>
               </div>
-              <input
+              <CountryPhoneCodeSelector
                 type="text"
                 {...register("mobile", {
                   required: "Phone is required",
                 })}
                 placeholder="Your Mobile No."
-                required
+                setValue={setValue}
               />
+              {/* <input required /> */}
               {errors.mobile && (
                 <p className="errors" style={{ color: "tomato" }}>
                   {errors.mobile.message}

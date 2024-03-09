@@ -1963,8 +1963,11 @@ const CountryPhoneCodeSelector = (
     props.setValue("phone", value);
   }, [value]);
   return (
-    <div className="data-container">
-      <select onChange={handleCountryChange}>
+    <div
+      className="data-container"
+      style={{ display: "flex", justifyContent: "space-between" }}
+    >
+      <select style={{ width: "35%" }} onChange={handleCountryChange}>
         <option>Select Country</option>
         {countryPhoneCodes.map((country, index) => (
           <option value={JSON.stringify(country)} key={index}>
@@ -1973,6 +1976,7 @@ const CountryPhoneCodeSelector = (
         ))}
       </select>
       <input
+        style={{ width: "60%" }}
         {...props}
         onChange={(e) => {
           console.log(selectedCountry);
