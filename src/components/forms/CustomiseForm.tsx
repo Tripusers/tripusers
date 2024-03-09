@@ -12,6 +12,7 @@ import { getBrand } from "@/src/sanity/sanity-utils";
 import Image from "next/image";
 import Link from "next/link";
 import ImageSize from "@/src/utils/image-utils";
+import DatePickerInput from "../default/datepicker";
 
 const schema = z.object({
   name: z.string().min(1),
@@ -53,6 +54,7 @@ const CustomiseForm = ({ onClick }: props) => {
     formState: { errors, isSubmitting },
     setError,
     reset,
+    getValues,
   } = useForm<formFields>();
   //console.log(errors);
   const [isSubmit, setIsSubmit] = useState(false);
@@ -191,11 +193,14 @@ const CustomiseForm = ({ onClick }: props) => {
                 <p style={{ color: "tomato" }}>{errors.phone.message}</p>
               )}
               <div className="data-container">
+                {/* <DatePickerInput
+                  {...register("date")}
+                  type={"text"}
+                  placeholder="Travel Date"
+                /> */}
                 <input
                   {...register("date")}
-                  type="text"
-                  onFocus={(e) => (e.currentTarget.type = "date")}
-                  onBlur={(e) => (e.currentTarget.type = "text")}
+                  type={"text"}
                   placeholder="Travel Date"
                 />
                 <input
