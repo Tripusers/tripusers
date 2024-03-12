@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
+import CountryPhoneCodeSelector from "../phone";
 
 const schema = z.object({
   name: z.string(),
@@ -26,6 +27,7 @@ const Form = () => {
     formState: { errors, isSubmitting },
     setError,
     reset,
+    setValue,
   } = useForm<formFields>();
   const [isSubmit, setIsSubmit] = useState(false);
   const onSubmitForm: SubmitHandler<formFields> = (data) => {
@@ -110,12 +112,13 @@ const Form = () => {
           )}
         </div>
         <div className="input-item">
-          <input
+          <CountryPhoneCodeSelector
             {...register("phone", {
               required: "Phone is required",
             })}
             type="text"
             placeholder="Phone No"
+            setValue={setValue}
           />
           {errors.phone && (
             <p style={{ color: "tomato" }}>{errors.phone.message}</p>
