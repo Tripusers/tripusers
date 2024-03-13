@@ -20,8 +20,8 @@ const schema = z.object({
   email: z.string().email(),
   phone: z
     .string()
-    .min(15)
-    .regex(/^\+(?:\d\s?){10,15}\d$/, {
+    .min(10)
+    .regex(/^.*\+\d{10,15}$/, {
       message: "The phone number is not valid; a country code is required.",
     }),
   date: z.string(),

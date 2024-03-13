@@ -40,7 +40,7 @@ export async function POST(request: Request) {
         phone: z
           .string()
           .min(10)
-          .regex(/^\+(?:\d\s?){10,15}\d$/, {
+          .regex(/^.*\+\d{10,15}$/, {
             message:
               "The phone number is not valid; a country code is required.",
           }),
@@ -580,7 +580,7 @@ export async function POST(request: Request) {
         phone: z
           .string()
           .min(10)
-          .regex(/^\+(?:\d\s?){10,15}\d$/, {
+          .regex(/^.*\+\d{10,15}$/, {
             message:
               "The phone number is not valid; a country code is required.",
           }),
@@ -885,7 +885,7 @@ export async function POST(request: Request) {
         mobile: z
           .string()
           .min(10)
-          .regex(/^\+(?:\d\s?){10,15}\d$/, {
+          .regex(/^.*\+\d{10,15}$/, {
             message:
               "The phone number is not valid; a country code is required.",
           }),
