@@ -20,7 +20,7 @@ const schema = z.object({
   email: z.string().email(),
   phone: z
     .string()
-    .min(10)
+    .min(15)
     .regex(/^\+(?:\d\s?){10,15}\d$/, {
       message: "The phone number is not valid; a country code is required.",
     }),
@@ -180,17 +180,19 @@ const CustomiseForm = ({ onClick }: props) => {
               {errors.email && (
                 <p style={{ color: "tomato" }}>{errors.email.message}</p>
               )}
-              <CountryPhoneCodeSelector
-                {...register("phone", {
-                  required: "Phone No is required",
-                  minLength: {
-                    value: 10,
-                    message:
-                      "Phone number must be at least 10 digits, and a country code is required.",
-                  },
-                })}
-                setValue={setValue}
-              />
+              <div title="Phone No with country code">
+                <CountryPhoneCodeSelector
+                  {...register("phone", {
+                    required: "Phone No is required",
+                    minLength: {
+                      value: 10,
+                      message:
+                        "Phone number must be at least 10 digits, and a country code is required.",
+                    },
+                  })}
+                  setValue={setValue}
+                />
+              </div>
               {errors.phone && (
                 <p style={{ color: "tomato" }}>{errors.phone.message}</p>
               )}

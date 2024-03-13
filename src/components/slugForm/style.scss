@@ -148,6 +148,18 @@
             gap: 5px;
           }
         }
+        .react-tel-input {
+          display: flex;
+
+          .form-control {
+            margin-left: 39px;
+            border-radius: 0 5px 5px 0;
+          }
+          .flag-dropdown {
+            background: none;
+            border: 1px solid $dark;
+          }
+        }
       }
 
       button[type="submit"] {

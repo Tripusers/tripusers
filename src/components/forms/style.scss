@@ -102,6 +102,19 @@
           padding: 10px;
         }
 
+        .react-tel-input {
+          display: flex;
+
+          .form-control {
+            margin-left: 39px;
+            border-radius: 0 5px 5px 0;
+          }
+          .flag-dropdown {
+            background: none;
+            border: 1px solid $dark;
+          }
+        }
+
         .data-container {
           display: flex;
           flex-direction: column;
@@ -186,7 +199,6 @@
         width: 300px;
 
         form {
-
           input,
           textarea,
           select {

@@ -92,6 +92,35 @@ footer {
       grid-template-columns: 1fr;
       gap: 10px;
 
+      .react-tel-input {
+        display: flex;
+
+        .form-control {
+          width: 100%;
+          margin-left: 0px;
+          background: none;
+        }
+
+        .flag-dropdown {
+          background: none;
+          border: 1px solid $offLight;
+          border-radius: 5px 0 0 5px;
+          .selected-flag {
+            &:hover {
+              background: none;
+            }
+          }
+
+          .country-list {
+            li {
+              .country-name {
+                color: $dark;
+              }
+            }
+          }
+        }
+      }
+
       .input-item {
         display: flex;
         flex-direction: column;
