@@ -52,7 +52,7 @@ const DatePickerInput = (
       />
       {open && (
         <div className={`calendar ${open ? "visible" : null}`}>
-          <header>
+          <div className="buttons">
             <button
               onClick={() => {
                 if (data.mm > 1) {
@@ -81,7 +81,7 @@ const DatePickerInput = (
             >
               Next
             </button>
-          </header>
+          </div>
           <div>
             {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((v) => (
               <span>{v}</span>

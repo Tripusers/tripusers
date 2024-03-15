@@ -10,12 +10,13 @@
 
 .calendar {
   position: absolute;
-  top: calc(100% + 5px);
+  bottom: calc(100% + 5px);
   left: 0;
   background-color: #fff;
   border: 1px solid #ccc;
   padding: 10px;
   display: none;
+  border-radius: 5px;
 }
 
 .calendar.visible {
@@ -46,6 +47,22 @@
   gap: 5px;
 }
 
+.calendar .buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+
+  button {
+    max-width: 60px;
+  }
+
+  p {
+    font-size: 1rem !important;
+  }
+}
+
 .calendar span {
   /* width: calc(100% / 7); */
   padding: 5px;
@@ -57,4 +74,20 @@
 
 .calendar span.date:hover {
   background-color: #f0f0f0;
+}
+
+//*---------->> Desktop
+
+@media screen and (min-width: 1025px) {
+  .calendar {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    border-radius: 5px;
+    height: fit-content;
+  }
 }
