@@ -43,9 +43,10 @@ const DatePickerInput = ({
     if (
       `${data.dd}/${data.mm}/${data.yyy}` !=
       `${currentDate}/${currentMonth}/${currentYear}`
-    )
+    ) {
       props.setValue("date", `${data.dd}/${data.mm}/${data.yyy}`);
-    setValue(`${data.dd}/${data.mm}/${data.yyy}`);
+      setValue(`${data.dd}/${data.mm}/${data.yyy}`);
+    }
   }, [data.dd]);
   // console.log(data);
 
