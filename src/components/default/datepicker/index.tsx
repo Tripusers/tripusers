@@ -66,6 +66,7 @@ const DatePickerInput = (
                   }
                 }
               }}
+              type="button"
             >
               Prev
             </button>
@@ -95,6 +96,7 @@ const DatePickerInput = (
                   setData((prev) => ({ ...prev, mm: 1, yyy: prev.yyy + 1 }));
                 }
               }}
+              type="button"
             >
               Next
             </button>
