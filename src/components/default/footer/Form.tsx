@@ -3,6 +3,7 @@ import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import CountryPhoneCodeSelector from "../phone";
+import { toast } from "react-toastify";
 
 const schema = z.object({
   name: z.string(),
@@ -29,6 +30,7 @@ const Form = () => {
     reset,
     setValue,
   } = useForm<formFields>();
+
   const [isSubmit, setIsSubmit] = useState(false);
   const onSubmitForm: SubmitHandler<formFields> = (data) => {
     const error = schema.safeParse(data);
@@ -58,10 +60,10 @@ const Form = () => {
               }),
             }).then((response) => {
               if (response.ok) {
-                alert("Email send check your email-in box");
+                toast("Email send check your email-in box");
               }
             });
-            alert("Data successfully submitted!");
+            toast("Data successfully submitted!");
             reset();
           } else {
             console.log(response.body);
@@ -124,7 +126,9 @@ const Form = () => {
             <p style={{ color: "tomato" }}>{errors.phone.message}</p>
           )}
         </div>
-        <button type="submit">Subscribe</button>
+        <button type="submit" disabled={isSubmit}>
+          {isSubmit ? "Loading..." : "Subscribe"}
+        </button>
       </div>
     </form>
   );

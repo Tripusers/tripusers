@@ -21,6 +21,8 @@ import { brand } from "@/src/types/brand";
 import { contactUs } from "@/src/types/contact";
 import { footer } from "@/src/types/footer";
 import ImageSize from "@/src/utils/image-utils";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Footer = () => {
   const [brand, setBrand] = useState<brand[]>();
@@ -55,6 +57,7 @@ const Footer = () => {
 
   return (
     <>
+      <ToastContainer />
       <section id="footerTop">
         <div className="location">
           <Link href="/contact" className="title">

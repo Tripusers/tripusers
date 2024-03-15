@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import "./style.css";
+import "./style.scss";
 const DatePickerInput = (
   props: DetailedHTMLProps<
     InputHTMLAttributes<HTMLInputElement>,

@@ -197,16 +197,16 @@ const CustomiseForm = ({ onClick }: props) => {
                 <p style={{ color: "tomato" }}>{errors.phone.message}</p>
               )}
               <div className="data-container">
-                {/* <DatePickerInput
-                  {...register("date")}
-                  type={"text"}
-                  placeholder="Travel Date"
-                /> */}
-                <input
+                <DatePickerInput
                   {...register("date")}
                   type={"text"}
                   placeholder="Travel Date"
                 />
+                {/* <input
+                  {...register("date")}
+                  type={"text"}
+                  placeholder="Travel Date"
+                /> */}
                 <input
                   {...register("guest")}
                   type="number"

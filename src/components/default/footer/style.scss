@@ -151,6 +151,17 @@ footer {
         height: 40px;
         color: $offLight;
         border-radius: 5px;
+
+        &:disabled,
+        &[disabled] {
+          background-color: $red;
+          cursor: wait;
+
+          &:hover {
+            background-color: $red;
+            color: $light;
+          }
+        }
       }
     }
   }
