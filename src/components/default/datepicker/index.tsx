@@ -36,7 +36,11 @@ const DatePickerInput = (
     return dates;
   };
   useEffect(() => {
-    setValue(`${data.dd}/${data.mm}/${data.yyy}`);
+    if (
+      `${data.dd}/${data.mm}/${data.yyy}` !=
+      `${currentDate}/${currentMonth}/${currentYear}`
+    )
+      setValue(`${data.dd}/${data.mm}/${data.yyy}`);
   }, [data.dd]);
   return (
     <div className="date-picker-container">
