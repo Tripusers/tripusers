@@ -122,6 +122,7 @@ const Form = () => {
             })}
             type="text"
             placeholder="Phone No"
+            name="phone"
             setValue={setValue}
           />
           {errors.phone && (

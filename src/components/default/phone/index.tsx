@@ -18,7 +18,7 @@ const CountryPhoneCodeSelector = (
   useEffect(() => {
     console.log("+" + value);
 
-    props.setValue("phone", `+${value}`);
+    props.setValue(props.name, `+${value}`);
   }, [value]);
   return (
     <PhoneInput

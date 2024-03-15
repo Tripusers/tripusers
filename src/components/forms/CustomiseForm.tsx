@@ -195,6 +195,7 @@ const CustomiseForm = ({ onClick }: props) => {
                         "Phone number must be at least 10 digits, and a country code is required.",
                     },
                   })}
+                  name="phone"
                   setValue={setValue}
                 />
               </div>

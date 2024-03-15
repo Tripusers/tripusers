@@ -287,6 +287,7 @@ const SlugForm = ({ onClick, packageName }: props) => {
                 })}
                 placeholder="Your Mobile No."
                 setValue={setValue}
+                name="mobile"
               />
               {/* <input required /> */}
               {errors.mobile && (
