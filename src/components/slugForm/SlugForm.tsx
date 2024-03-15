@@ -297,7 +297,9 @@ const SlugForm = ({ onClick, packageName }: props) => {
                 </p>
               )}
             </div>
-            <button type="submit">{isSubmit ? "Loading..." : "Submit"}</button>
+            <button type="submit" disabled={isSubmit}>
+              {isSubmit ? "Loading..." : "Submit"}
+            </button>
           </form>
         </div>
       </div>

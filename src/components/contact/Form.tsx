@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
+import { toastEmail, toastSuccess } from "../default/utils/Toastify";
 const schema = z.object({
   name: z.string(),
   email: z.string().email(),
@@ -52,10 +53,10 @@ const Form = () => {
               }),
             }).then((response) => {
               if (response.ok) {
-                alert("Email send check your email-in box");
+                toastEmail();
               }
             });
-            alert("Data successfully submitted!");
+            toastSuccess();
             reset();
           } else {
             console.log(response.body);
@@ -105,7 +106,9 @@ const Form = () => {
       {errors.message && (
         <p style={{ color: "tomato" }}>{errors.message.message}</p>
       )}
-      <button type="submit">Submit</button>
+      <button type="submit" disabled={isSubmit}>
+        {isSubmit ? "Loading..." : "Submit"}
+      </button>
     </form>
   );
 };

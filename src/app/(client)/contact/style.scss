@@ -105,6 +105,17 @@
         height: 40px;
         border-radius: 5px;
         color: $offLight;
+
+        &:disabled,
+        &[disabled] {
+          background-color: $red;
+          cursor: wait;
+
+          &:hover {
+            background-color: $red;
+            color: $light;
+          }
+        }
       }
     }
 
