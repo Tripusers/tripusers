@@ -62,8 +62,12 @@ const CustomiseForm = ({ onClick }: props) => {
   //console.log(errors);
   const [isSubmit, setIsSubmit] = useState(false);
   const onSubmitForm: SubmitHandler<formFields> = (data) => {
+    console.log(data);
+
     const error = schema.safeParse(data);
+
     if (!error.success) {
+      console.log(error.error.issues);
       error.error.issues.map((v: any) => {
         //console.log(v);
 
@@ -202,6 +206,7 @@ const CustomiseForm = ({ onClick }: props) => {
                   {...register("date")}
                   type={"text"}
                   placeholder="Travel Date"
+                  setValue={setValue}
                 />
                 {/* <input
                   {...register("date")}

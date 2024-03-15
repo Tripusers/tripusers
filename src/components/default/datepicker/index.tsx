@@ -7,10 +7,9 @@ import React, {
 } from "react";
 import "./style.scss";
 const DatePickerInput = (
-  props: DetailedHTMLProps<
-    InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  >
+  props:
+    | DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
+    | any
 ) => {
   const [open, setOpen] = useState<boolean>(false);
   const handleOpen = () => setOpen((prev) => !prev);
@@ -36,18 +35,23 @@ const DatePickerInput = (
     return dates;
   };
   useEffect(() => {
+    console.log(
+      `${data.dd}/${data.mm}/${data.yyy}` !=
+        `${currentDate}/${currentMonth}/${currentYear}`
+    );
+
     if (
       `${data.dd}/${data.mm}/${data.yyy}` !=
       `${currentDate}/${currentMonth}/${currentYear}`
     )
-      setValue(`${data.dd}/${data.mm}/${data.yyy}`);
+      props.setValue("date", `${data.dd}/${data.mm}/${data.yyy}`);
   }, [data.dd]);
   // console.log(data);
 
   return (
     <div className="date-picker-container">
       <input
-        {...props}
+        // {...props}
         className="date-picker-input"
         onFocus={handleOpen}
         value={value}
