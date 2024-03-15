@@ -573,7 +573,7 @@ export async function POST(request: Request) {
       </body>
       
       </html>`;
-    } else if (type.toLocaleLowerCase() == "customizeYourTrip") {
+    } else if (type.toLocaleLowerCase() == "customizeyourtrip") {
       const schema = z.object({
         name: z.string().min(1),
         email: z.string().email(),
