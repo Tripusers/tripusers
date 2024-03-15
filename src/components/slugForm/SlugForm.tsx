@@ -19,6 +19,7 @@ import ImageSize from "@/src/utils/image-utils";
 import { z } from "zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import CountryPhoneCodeSelector from "../default/phone";
+import { toastEmail, toastSuccess } from "../default/utils/Toastify";
 
 interface props {
   onClick?: () => void;
@@ -145,10 +146,10 @@ const SlugForm = ({ onClick, packageName }: props) => {
               }),
             }).then((response) => {
               if (response.ok) {
-                alert("Email send check your email-in box");
+                toastEmail();
               }
             });
-            alert("Data successfully submitted!");
+            toastSuccess();
             reset();
             if (onClick) onClick();
           } else {
@@ -295,7 +296,7 @@ const SlugForm = ({ onClick, packageName }: props) => {
                 </p>
               )}
             </div>
-            <button type="submit">{!isSubmit ? "Submit" : "Loading..."}</button>
+            <button type="submit">{isSubmit ? "Loading..." : "Submit"}</button>
           </form>
         </div>
       </div>
