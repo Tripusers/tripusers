@@ -4,6 +4,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import CountryPhoneCodeSelector from "../phone";
 import { toast } from "react-toastify";
+import { toastEmail, toastSuccess } from "../utils/Toastify";
 
 const schema = z.object({
   name: z.string(),
@@ -60,10 +61,10 @@ const Form = () => {
               }),
             }).then((response) => {
               if (response.ok) {
-                toast("Email send check your email-in box");
+                toastEmail();
               }
             });
-            toast("Data successfully submitted!");
+            toastSuccess();
             reset();
           } else {
             console.log(response.body);
@@ -82,6 +83,7 @@ const Form = () => {
       //console.log(data);
     }
   };
+
   return (
     <form onSubmit={handleSubmit(onSubmitForm)}>
       <label>Keep travelling all year round!</label>

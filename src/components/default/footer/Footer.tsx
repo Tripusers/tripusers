@@ -57,7 +57,6 @@ const Footer = () => {
 
   return (
     <>
-      <ToastContainer />
       <section id="footerTop">
         <div className="location">
           <Link href="/contact" className="title">
@@ -116,6 +115,8 @@ const Footer = () => {
         </div>
       </section>
       <footer>
+        <ToastContainer />
+
         <div className="logo-container">
           {brand && brand[0].lightImage && (
             <Image

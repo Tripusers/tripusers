@@ -60,6 +60,8 @@
 
   select {
     font-size: 1rem !important;
+    padding: 10px 10px !important;
+    width: auto !important;
   }
 }
 
@@ -67,6 +69,7 @@
   /* width: calc(100% / 7); */
   padding: 5px;
   text-align: center;
+  font-size: 0.9rem !important;
 }
 
 .calendar span.date {
@@ -90,5 +93,16 @@
     display: none;
     border-radius: 5px;
     height: fit-content;
+  }
+
+  .calendar .buttons {
+    select {
+      padding: 5px 8px !important;
+      font-size: 0.9rem !important;
+    }
+  }
+
+  .date-picker-input {
+    font-size: 0.8rem !important;
   }
 }

@@ -14,6 +14,7 @@ import Link from "next/link";
 import ImageSize from "@/src/utils/image-utils";
 import DatePickerInput from "../default/datepicker";
 import CountryPhoneCodeSelector from "../default/phone";
+import { toastEmail, toastSuccess } from "../default/utils/Toastify";
 
 const schema = z.object({
   name: z.string().min(1),
@@ -91,10 +92,10 @@ const CustomiseForm = ({ onClick }: props) => {
               }),
             }).then((response) => {
               if (response.ok) {
-                alert("Email send check your email-in box");
+                toastEmail();
               }
             });
-            alert("Data successfully submitted!");
+            toastSuccess();
             reset();
             if (onClick) onClick();
           } else {
@@ -225,8 +226,8 @@ const CustomiseForm = ({ onClick }: props) => {
                 <p style={{ color: "tomato" }}>{errors.message.message}</p>
               )}
 
-              <button type="submit" disabled={isSubmitting}>
-                {isSubmit ? "Submit" : "Submit Enquiry"}
+              <button type="submit" disabled={isSubmit}>
+                {isSubmit ? "Loading..." : "Submit Enquiry"}
               </button>
             </form>
           </div>
