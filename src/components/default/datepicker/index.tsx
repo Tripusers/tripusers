@@ -42,6 +42,8 @@ const DatePickerInput = (
     )
       setValue(`${data.dd}/${data.mm}/${data.yyy}`);
   }, [data.dd]);
+  // console.log(data);
+
   return (
     <div className="date-picker-container">
       <input
@@ -67,9 +69,24 @@ const DatePickerInput = (
             >
               Prev
             </button>
-            <p>
-              {data.dd}/{data.mm}/{data.yyy}{" "}
-            </p>
+            <select
+              onChange={(e) => {
+                console.log(e.currentTarget.value);
+                setData(JSON.parse(e.currentTarget.value));
+              }}
+            >
+              <option>
+                {data.dd}/{data.mm}/{data.yyy}
+              </option>
+              {[...new Array(100)].map((v, i) => (
+                <option
+                  key={i}
+                  value={JSON.stringify({ ...data, yyy: data.yyy + i + 1 })}
+                >
+                  {data.dd}/{data.mm}/{data.yyy + i + 1}
+                </option>
+              ))}
+            </select>
             <button
               onClick={() => {
                 if (data.mm < 12) {
