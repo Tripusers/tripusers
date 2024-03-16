@@ -49,6 +49,7 @@ const DatePickerInput = ({
     }
   }, [data.dd]);
   // console.log(data);
+  // console.log("date ==>", new Date(data.yyy, data.mm - 1, 1), data);
 
   return (
     <div className="date-picker-container">
@@ -97,7 +98,9 @@ const DatePickerInput = ({
                 setData(JSON.parse(e.currentTarget.value));
               }}
             >
-              <option>{data.yyy}</option>
+              <option value={JSON.stringify({ ...data, yyy: currentYear })}>
+                {currentYear}
+              </option>
               {[...new Array(100)].map((v, i) => (
                 <option
                   key={i}
@@ -110,7 +113,7 @@ const DatePickerInput = ({
           </div>
           <div>
             {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((v) => (
-              <span>{v}</span>
+              <span style={{ color: v == "Sun" ? "tomato" : "" }}>{v}</span>
             ))}
             {[
               ...new Array(new Date(data.yyy, data.mm - 1, 1).getDay()).fill(
