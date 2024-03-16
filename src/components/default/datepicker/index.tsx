@@ -57,55 +57,56 @@ const DatePickerInput = ({
         className="date-picker-input"
         onFocus={handleOpen}
         value={value}
+        autoCorrect={false}
+        autoComplete="off"
       />
       {open && (
         <div className={`calendar ${open ? "visible" : null}`}>
           <div className="buttons">
-            <button
-              onClick={() => {
-                if (data.mm > 1) {
-                  if (data.mm !== currentMonth || data.yyy !== currentYear)
-                    setData((prev) => ({ ...prev, mm: prev.mm - 1 }));
-                } else {
-                  if (data.yyy !== currentYear) {
-                    setData((prev) => ({ ...prev, mm: 12, yyy: prev.yyy - 1 }));
-                  }
-                }
+            <select
+              value={data.mm}
+              onChange={(e) => {
+                // console.log(e.target.value);
+                setData((prv) => ({
+                  ...prv,
+                  mm: parseInt(e.target.value),
+                }));
               }}
-              type="button"
             >
-              Prev
-            </button>
+              {[
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+              ].map((v, i) => (
+                <option value={i + 1}>{v}</option>
+              ))}
+            </select>
+
             <select
               onChange={(e) => {
-                console.log(e.currentTarget.value);
+                // console.log(e.currentTarget.value);
                 setData(JSON.parse(e.currentTarget.value));
               }}
             >
-              <option>
-                {data.dd}/{data.mm}/{data.yyy}
-              </option>
+              <option>{data.yyy}</option>
               {[...new Array(100)].map((v, i) => (
                 <option
                   key={i}
                   value={JSON.stringify({ ...data, yyy: data.yyy + i + 1 })}
                 >
-                  {data.dd}/{data.mm}/{data.yyy + i + 1}
+                  {data.yyy + i + 1}
                 </option>
               ))}
             </select>
-            <button
-              onClick={() => {
-                if (data.mm < 12) {
-                  setData((prev) => ({ ...prev, mm: prev.mm + 1 }));
-                } else {
-                  setData((prev) => ({ ...prev, mm: 1, yyy: prev.yyy + 1 }));
-                }
-              }}
-              type="button"
-            >
-              Next
-            </button>
           </div>
           <div>
             {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((v) => (

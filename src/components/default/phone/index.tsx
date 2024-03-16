@@ -16,7 +16,7 @@ const CountryPhoneCodeSelector = (
 ) => {
   const [value, setValue] = useState<any>();
   useEffect(() => {
-    console.log("+" + value);
+    // console.log("+" + value);
 
     props.setValue(props.name, `+${value}`);
   }, [value]);
