@@ -129,8 +129,15 @@
           color: $light;
           font-size: 0.9rem;
 
-          &:disabled {
-            background-color: rgb(136, 136, 136);
+          &:disabled,
+          &[disabled] {
+            background-color: $red;
+            cursor: wait;
+
+            &:hover {
+              background-color: $red;
+              color: $light;
+            }
           }
         }
       }

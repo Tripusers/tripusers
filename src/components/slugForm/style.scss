@@ -166,6 +166,17 @@
         background-color: $yellow;
         height: 35px;
         border-radius: 5px;
+
+        &:disabled,
+        &[disabled] {
+          background-color: $red;
+          cursor: wait;
+
+          &:hover {
+            background-color: $red;
+            color: $light;
+          }
+        }
       }
     }
   }

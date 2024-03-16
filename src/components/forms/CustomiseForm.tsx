@@ -61,13 +61,10 @@ const CustomiseForm = ({ onClick }: props) => {
   } = useForm<formFields>();
   //console.log(errors);
   const [isSubmit, setIsSubmit] = useState(false);
+
   const onSubmitForm: SubmitHandler<formFields> = (data) => {
-    console.log(data);
-
     const error = schema.safeParse(data);
-
     if (!error.success) {
-      console.log(error.error.issues);
       error.error.issues.map((v: any) => {
         //console.log(v);
 
@@ -195,7 +192,6 @@ const CustomiseForm = ({ onClick }: props) => {
                         "Phone number must be at least 10 digits, and a country code is required.",
                     },
                   })}
-                  name="phone"
                   setValue={setValue}
                 />
               </div>
