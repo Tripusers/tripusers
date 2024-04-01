@@ -25,7 +25,7 @@ const CountryPhoneCodeSelector = (
       onChange={setValue}
       value={value}
       placeholder="Phone No"
-      country="us"
+      country="in"
     />
   );
 };
