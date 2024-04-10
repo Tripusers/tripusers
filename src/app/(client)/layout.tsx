@@ -12,12 +12,18 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.tripusers.com/"),
   title: {
     default: "tripusers.com",
     template: "%s | tripusers.com",
   },
   description:
     "Welcome to travel elevated, where every moment is a seamless blend of sophistication and adventure. Discover refined luxury with Tripusers.com.",
+  openGraph: {
+    type: "website",
+    images: "https://i.postimg.cc/j5h62pZg/tripusers-com-card.png",
+    url: "https://www.tripusers.com/",
+  },
 };
 
 export default function RootLayout({
