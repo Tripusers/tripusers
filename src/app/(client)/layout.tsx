@@ -1,8 +1,8 @@
 import { ClerkProvider } from "@clerk/nextjs";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./scss/globals.scss";
 import Header from "@/src/components/default/header/Header";
-import type { Viewport } from "next";
+
 import Footer from "@/src/components/default/footer/Footer";
 
 export const viewport: Viewport = {
@@ -19,18 +19,11 @@ export const metadata: Metadata = {
   },
   description:
     "Welcome to travel elevated, where every moment is a seamless blend of sophistication and adventure. Discover refined luxury with Tripusers.com.",
-  // openGraph: {
-  //   type: "website",
-  //   images: [
-  //     {
-  //       url: "https://i.postimg.cc/j5h62pZg/tripusers-com-card.png",
-  //       search: "tripusers.com",
-  //       href: "https://i.postimg.cc/j5h62pZg/tripusers-com-card.png",
-  //       hostname: "i.postimg.cc",
-  //     },
-  //   ],
-  //   url: "https://www.tripusers.com/",
-  // },
+  openGraph: {
+    type: "website",
+
+    url: "https://www.tripusers.com/",
+  },
 };
 
 export default function RootLayout({
