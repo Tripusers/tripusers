@@ -142,6 +142,16 @@ export async function getInternational(
 
   return { data, totalPages };
 }
+export async function getInternational_site_map(): Promise<international[]> {
+  const data = await createClient(clientConfig).fetch(
+    groq`*[_type== "international"] {
+    name,
+    "slug":slug.current,
+    _createdAt
+  }`
+  );
+  return data;
+}
 
 export async function getInternationalSlug(
   slug: string
@@ -385,6 +395,17 @@ export async function getDomestic(
   return { data, totalPages };
 }
 
+export async function getDomestic_site_map(): Promise<Domestic[]> {
+  const data = await createClient(clientConfig).fetch(
+    groq`*[_type== "domestic"] {
+    name,
+    "slug":slug.current,
+    _createdAt
+  }`
+  );
+  return data;
+}
+
 export async function getDomesticSlug(slug: string): Promise<Domestic> {
   return createClient(clientConfig).fetch(
     groq`*[_type == "domestic" && slug.current == $slug][0]  {
@@ -568,6 +589,16 @@ export async function getWildLife(
 
   return { data, totalPages };
 }
+export async function getWildLife_site_map(): Promise<wildLife[]> {
+  const data = await createClient(clientConfig).fetch(
+    groq`*[_type== "wildlife"] {
+    name,
+    "slug":slug.current,
+    _createdAt
+  }`
+  );
+  return data;
+}
 
 export async function getWildLifeSlug(slug: string): Promise<wildLife> {
   return createClient(clientConfig).fetch(
@@ -708,6 +739,16 @@ export async function getSpecial(): Promise<special[]> {
     }`
   );
 }
+export async function getSpecial_site_map(): Promise<special[]> {
+  const data = await createClient(clientConfig).fetch(
+    groq`*[_type== "special"] {
+    name,
+    "slug":slug.current,
+    _createdAt
+  }`
+  );
+  return data;
+}
 
 export async function getSpecialSlug(slug: string): Promise<special> {
   return createClient(clientConfig).fetch(
@@ -839,6 +880,7 @@ export async function getTrendingTestimonials(): Promise<Testimonial[]> {
     }`
   );
 }
+
 export async function getTestimonials(
   page: number = 1,
   pageSize: number = 6
@@ -876,6 +918,17 @@ export async function getTestimonials(
   const totalPages = Math.ceil(totalCount / pageSize);
 
   return { data, totalPages };
+}
+
+export async function getTestimonials_site_map(): Promise<Testimonial[]> {
+  const data = await createClient(clientConfig).fetch(
+    groq`*[_type== "testimonials"] {
+    name,
+    "slug":slug.current,
+    _createdAt
+  }`
+  );
+  return data;
 }
 
 export async function getTestimonialSlug(slug: string): Promise<Testimonial> {
