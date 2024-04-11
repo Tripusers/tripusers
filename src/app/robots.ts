@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/admin/*", "/studio/*"],
       },
     ],
-    sitemap: "/sitemap.xml",
+    sitemap: "https://www.tripusers.com/sitemap.xml",
   };
 }
