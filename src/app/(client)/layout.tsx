@@ -20,9 +20,12 @@ export const metadata: Metadata = {
   description:
     "Welcome to travel elevated, where every moment is a seamless blend of sophistication and adventure. Discover refined luxury with Tripusers.com.",
   openGraph: {
+    images: [
+      {
+        url: "https://i.postimg.cc/j5h62pZg/tripusers-com-card.png",
+      },
+    ],
     type: "website",
-
-    url: "https://www.tripusers.com/",
   },
 };
 
