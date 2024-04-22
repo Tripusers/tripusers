@@ -265,6 +265,11 @@ const HeroSection = () => {
       )}
 
       <div className="info-container">
+        <h1>
+          Welcome to travel elevated, where every moment is a seamless blend of
+          sophistication and adventure. Discover refined luxury with
+          Tripusers.com.
+        </h1>
         {dataInfo.map((item, index) => (
           <div key={index} className="info">
             <Image src={item.icon} alt="icon" width={20} height={20} />

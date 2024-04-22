@@ -81,6 +81,10 @@
     row-gap: 10px;
     width: 100%;
 
+    h1 {
+      display: none;
+    }
+
     .info {
       display: flex;
       align-items: center;

@@ -17,6 +17,18 @@ export const metadata: Metadata = {
     default: "tripusers.com",
     template: "%s | tripusers.com",
   },
+  keywords: [
+    "tripusers.com",
+    "Tripusers.com",
+    "Tripusers",
+    "trip users",
+    "Trip Users",
+    "travel agency in India",
+    "travel agency in Nagpur",
+    "travel agency in Asia",
+    "travel packages",
+    "cheap travel packages",
+  ],
   description:
     "Welcome to travel elevated, where every moment is a seamless blend of sophistication and adventure. Discover refined luxury with Tripusers.com.",
   openGraph: {
