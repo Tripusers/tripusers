@@ -4,6 +4,7 @@ import "./scss/globals.scss";
 import Header from "@/src/components/default/header/Header";
 
 import Footer from "@/src/components/default/footer/Footer";
+import { SuccessPopUpProvider } from "@/src/providers/SuccessPop";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -56,9 +57,11 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body>
-          <Header />
-          <main>{children}</main>
-          <Footer />
+          <SuccessPopUpProvider>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </SuccessPopUpProvider>
         </body>
       </html>
     </ClerkProvider>

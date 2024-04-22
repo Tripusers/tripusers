@@ -15,6 +15,7 @@ import ImageSize from "@/src/utils/image-utils";
 import DatePickerInput from "../default/datepicker";
 import CountryPhoneCodeSelector from "../default/phone";
 import { toastEmail, toastSuccess } from "../default/utils/Toastify";
+import { useSuccessPop } from "@/src/providers/SuccessPop";
 
 const schema = z.object({
   name: z.string().min(1),
@@ -47,7 +48,7 @@ type formFields = {
 
 const CustomiseForm = ({ onClick }: props) => {
   const [brandData, setBrandData] = useState<brand[]>([]);
-
+  const { changeState } = useSuccessPop();
   const CustomiseFormRef = useRef<HTMLElement | null>(null);
   const formContainerRef = useRef<HTMLDivElement | null>(null);
   const {
@@ -97,6 +98,7 @@ const CustomiseForm = ({ onClick }: props) => {
               }
             });
             toastSuccess();
+            changeState(true);
             reset();
             if (onClick) onClick();
           } else {

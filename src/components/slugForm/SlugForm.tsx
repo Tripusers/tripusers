@@ -20,6 +20,7 @@ import { z } from "zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import CountryPhoneCodeSelector from "../default/phone";
 import { toastEmail, toastSuccess } from "../default/utils/Toastify";
+import { useSuccessPop } from "@/src/providers/SuccessPop";
 
 interface props {
   onClick?: () => void;
@@ -100,6 +101,7 @@ const SlugForm = ({ onClick, packageName }: props) => {
       document.removeEventListener("mousedown", boxClose);
     };
   }, []);
+  const { changeState } = useSuccessPop();
   const {
     register,
     handleSubmit,
@@ -146,9 +148,11 @@ const SlugForm = ({ onClick, packageName }: props) => {
               }),
             }).then((response) => {
               if (response.ok) {
+                // changeState(true)
                 toastEmail();
               }
             });
+            changeState(true);
             toastSuccess();
             reset();
             if (onClick) onClick();

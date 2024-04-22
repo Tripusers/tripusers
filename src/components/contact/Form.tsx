@@ -3,6 +3,7 @@ import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { toastEmail, toastSuccess } from "../default/utils/Toastify";
+import { useSuccessPop } from "@/src/providers/SuccessPop";
 const schema = z.object({
   name: z.string(),
   email: z.string().email(),
@@ -14,6 +15,7 @@ type formFields = {
   message: string;
 };
 const Form = () => {
+  const { changeState } = useSuccessPop();
   const {
     register,
     handleSubmit,
@@ -57,6 +59,7 @@ const Form = () => {
               }
             });
             toastSuccess();
+            changeState(true);
             reset();
           } else {
             console.log(response.body);
