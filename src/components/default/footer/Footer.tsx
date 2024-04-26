@@ -147,6 +147,9 @@ const Footer = () => {
         </div>
         <div className="footer-footer">
           <p> © 2024 Tripusers.com. All Rights Reserved.</p>
+          <p id="India">
+            MADE IN 🇮🇳 WITH <span id="heart">❤</span>
+          </p>
           <p>
             Design & Developed by <br />
             <span>

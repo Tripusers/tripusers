@@ -193,6 +193,18 @@ footer {
     flex-direction: column;
     gap: 10px;
 
+    #India {
+      flex-direction: row;
+      justify-content: center;
+      text-align: center;
+
+      #heart {
+        color: $red;
+        font-size: 18px;
+        margin-left: 5px;
+      }
+    }
+
     p {
       text-align: center;
       display: flex;
@@ -260,6 +272,12 @@ footer {
     .footer-footer {
       flex-direction: row;
       justify-content: space-between;
+
+      #India {
+        #heart {
+          margin-left: 0px;
+        }
+      }
 
       p {
         flex-direction: row;
@@ -347,6 +365,13 @@ footer {
 
     .footer-footer {
       padding: 10px 0;
+
+      #India {
+        #heart {
+          margin-left: 0px;
+          margin-top: -3px;
+        }
+      }
       p {
         span {
           a {

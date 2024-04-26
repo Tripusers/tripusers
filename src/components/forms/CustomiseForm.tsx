@@ -97,7 +97,7 @@ const CustomiseForm = ({ onClick }: props) => {
                 toastEmail();
               }
             });
-            toastSuccess();
+            //toastSuccess();
             changeState(true);
             reset();
             if (onClick) onClick();

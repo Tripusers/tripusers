@@ -25,6 +25,7 @@ export default authMiddleware({
     "/terms-&-conditions",
     "/api",
     /^\/api\/.*/,
+    "/test",
   ],
 });
 

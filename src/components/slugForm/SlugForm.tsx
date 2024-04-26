@@ -153,7 +153,7 @@ const SlugForm = ({ onClick, packageName }: props) => {
               }
             });
             changeState(true);
-            toastSuccess();
+            //toastSuccess();
             reset();
             if (onClick) onClick();
           } else {
