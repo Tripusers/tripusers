@@ -44,9 +44,6 @@ export const metadata: Metadata = {
     google: "85P899Kzilhv34znq2vog_FXgyKtq29TP9mRvJ3RfR8",
   },
 };
-{
-  /* <meta name="google-site-verification" content="85P899Kzilhv34znq2vog_FXgyKtq29TP9mRvJ3RfR8" /> */
-}
 
 export default function RootLayout({
   children,

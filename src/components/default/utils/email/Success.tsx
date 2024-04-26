@@ -7,7 +7,7 @@ import ImageSize from "@/src/utils/image-utils";
 import { useSuccessPop } from "@/src/providers/SuccessPop";
 
 const Success = () => {
-  const { changeState } = useSuccessPop();
+  const { changeState, text } = useSuccessPop();
 
   return (
     <div id="successPopup">
@@ -26,7 +26,7 @@ const Success = () => {
           </div>
         </div>
         <div className="text">
-          <p>Your Enquiry has been sent successfully!</p>
+          <p>{text}</p>
         </div>
       </div>
     </div>
