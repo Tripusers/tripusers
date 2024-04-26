@@ -128,15 +128,36 @@ export async function POST(request: Request) {
                               padding-right: 0px;
                               padding-left: 0px;
                               background-image: url("${dd.cardImage}");
-                            height: 200px;
-                            background-size: cover;
-                            background-repeat: no-repeat;
-                            background-position: center;
-                            border-radius: 10px;
+                                height: 200px;
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                border-radius: 10px;
                             "
                             align="center"
                           >
-                            
+                            <img
+                              class="v-src-width v-src-max-width"
+                              style="
+                                outline: none;
+                                text-decoration: none;
+                                -ms-interpolation-mode: bicubic;
+                                clear: both;
+                                display: inline-block !important;
+                                border: none;
+                                height: auto;
+                                float: none;
+                                width: 100%;
+                                max-width: 280px;
+                                border-radius: 10px;
+                              "
+                              title=""
+                              src="${dd.cardImage}"
+                              alt=""
+                              width="280"
+                              align="center"
+                              border="0"
+                            />
                           </td>
                         </tr>
                       </tbody>
