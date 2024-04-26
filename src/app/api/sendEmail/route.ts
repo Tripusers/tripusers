@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     await account.verify();
     const getTrend = await getTrendingInternational();
     const SortGetTrend = getTrend.filter((v) => v.isTrending);
-    const s = SortGetTrend.toSorted(() => Math.random() - 0.5);
+    const s = SortGetTrend.sort(() => Math.random() - 0.5);
     const randomTrend = s.slice(0, 4).filter((v) => v);
     const reA = [
       [randomTrend[0], randomTrend[1]],
