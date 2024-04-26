@@ -101,7 +101,7 @@ const SlugForm = ({ onClick, packageName }: props) => {
       document.removeEventListener("mousedown", boxClose);
     };
   }, []);
-  const { changeState } = useSuccessPop();
+  const { changeState, setText } = useSuccessPop();
   const {
     register,
     handleSubmit,
@@ -152,6 +152,8 @@ const SlugForm = ({ onClick, packageName }: props) => {
                 //toastEmail();
               }
             });
+            //refer code
+            setText("text");
             changeState(true);
 
             //toastSuccess();

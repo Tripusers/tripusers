@@ -37,7 +37,7 @@ export const SuccessPopUpProvider = ({
   );
   return (
     <SuccessPopCtx.Provider value={obj}>
-      {show && <Success />}
+      {show && <Success text={text} />}
       {children}
     </SuccessPopCtx.Provider>
   );

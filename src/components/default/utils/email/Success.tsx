@@ -6,8 +6,9 @@ import "./style.scss";
 import ImageSize from "@/src/utils/image-utils";
 import { useSuccessPop } from "@/src/providers/SuccessPop";
 
-const Success = () => {
-  const { changeState, text } = useSuccessPop();
+const Success = (props: { text: string }) => {
+  const { text, changeState } = useSuccessPop();
+  console.log(text);
 
   return (
     <div id="successPopup">
@@ -26,7 +27,7 @@ const Success = () => {
           </div>
         </div>
         <div className="text">
-          <p>{text}</p>
+          <p>{props.text}</p>
         </div>
       </div>
     </div>
