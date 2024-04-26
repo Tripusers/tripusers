@@ -105,7 +105,7 @@ const SlugForm = ({ onClick, packageName }: props) => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors },
     setError,
     reset,
     setValue,

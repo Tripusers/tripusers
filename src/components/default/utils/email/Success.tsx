@@ -8,14 +8,12 @@ import { useSuccessPop } from "@/src/providers/SuccessPop";
 import { useEffect, useRef } from "react";
 
 const Success = (props: { text: string }) => {
-  const { text, changeState } = useSuccessPop();
+  const { changeState } = useSuccessPop();
   const ContainerRef = useRef<HTMLDivElement | null>(null);
-
-  //console.log(text);
 
   useEffect(() => {
     const boxClose = (e: any) => {
-      if (!ContainerRef.current?.contains(e.target)) {
+      if (e.target.id == ContainerRef.current?.id) {
         changeState(false);
       }
     };
