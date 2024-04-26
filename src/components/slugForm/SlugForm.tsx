@@ -149,10 +149,11 @@ const SlugForm = ({ onClick, packageName }: props) => {
             }).then((response) => {
               if (response.ok) {
                 // changeState(true)
-                toastEmail();
+                //toastEmail();
               }
             });
             changeState(true);
+
             //toastSuccess();
             reset();
             if (onClick) onClick();
