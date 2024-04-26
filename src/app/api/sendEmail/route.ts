@@ -124,16 +124,7 @@ export async function POST(request: Request) {
                       <tbody>
                         <tr>
                           <td
-                            style="
-                              padding-right: 0px;
-                              padding-left: 0px;
-                              background-image: url("${dd.cardImage}");
-                                height: 200px;
-                                background-size: cover;
-                                background-repeat: no-repeat;
-                                background-position: center;
-                                border-radius: 10px;
-                            "
+                            style="padding-right: 0px;padding-left: 0px;background-image: url("${dd.cardImage}");height: 200px;background-size: cover;background-repeat: no-repeat;background-position: center;border-radius: 10px;"
                             align="center"
                           >
                             <img
