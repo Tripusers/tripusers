@@ -153,7 +153,7 @@ const SlugForm = ({ onClick, packageName }: props) => {
               }
             });
             //refer code
-            setText("text");
+            setText("Your enquiry has been sent successfully!");
             changeState(true);
 
             //toastSuccess();

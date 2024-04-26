@@ -5,13 +5,28 @@ import Image from "next/image";
 import "./style.scss";
 import ImageSize from "@/src/utils/image-utils";
 import { useSuccessPop } from "@/src/providers/SuccessPop";
+import { useEffect, useRef } from "react";
 
 const Success = (props: { text: string }) => {
   const { text, changeState } = useSuccessPop();
-  console.log(text);
+  const ContainerRef = useRef<HTMLDivElement | null>(null);
+
+  //console.log(text);
+
+  useEffect(() => {
+    const boxClose = (e: any) => {
+      if (!ContainerRef.current?.contains(e.target)) {
+        changeState(false);
+      }
+    };
+    document.addEventListener("mousedown", boxClose);
+    return () => {
+      document.removeEventListener("mousedown", boxClose);
+    };
+  }, []);
 
   return (
-    <div id="successPopup">
+    <div id="successPopup" ref={ContainerRef}>
       <div className="success-card">
         <button onClick={() => changeState(false)}>
           <AiFillCloseCircle />

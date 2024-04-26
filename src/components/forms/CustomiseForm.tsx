@@ -48,7 +48,7 @@ type formFields = {
 
 const CustomiseForm = ({ onClick }: props) => {
   const [brandData, setBrandData] = useState<brand[]>([]);
-  const { changeState } = useSuccessPop();
+  const { changeState, setText } = useSuccessPop();
   const CustomiseFormRef = useRef<HTMLElement | null>(null);
   const formContainerRef = useRef<HTMLDivElement | null>(null);
   const {
@@ -94,10 +94,11 @@ const CustomiseForm = ({ onClick }: props) => {
               }),
             }).then((response) => {
               if (response.ok) {
-                toastEmail();
+                //toastEmail();
               }
             });
             //toastSuccess();
+            setText("Your enquiry has been sent successfully!");
             changeState(true);
             reset();
             if (onClick) onClick();

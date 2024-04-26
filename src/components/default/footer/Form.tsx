@@ -5,6 +5,7 @@ import { z } from "zod";
 import CountryPhoneCodeSelector from "../phone";
 import { toast } from "react-toastify";
 import { toastEmail, toastSuccess } from "../utils/Toastify";
+import { useSuccessPop } from "@/src/providers/SuccessPop";
 
 const schema = z.object({
   name: z.string(),
@@ -33,6 +34,8 @@ const Form = () => {
   } = useForm<formFields>();
 
   const [isSubmit, setIsSubmit] = useState(false);
+  const { changeState, setText } = useSuccessPop();
+
   const onSubmitForm: SubmitHandler<formFields> = (data) => {
     const error = schema.safeParse(data);
     if (!error.success) {
@@ -61,10 +64,13 @@ const Form = () => {
               }),
             }).then((response) => {
               if (response.ok) {
-                toastEmail();
+                //toastEmail();
               }
             });
-            toastSuccess();
+            setText("Thank you for Subscribing to our Newsletter!");
+            changeState(true);
+
+            //toastSuccess();
             reset();
           } else {
             console.log(response.body);
