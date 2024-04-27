@@ -244,6 +244,7 @@ const SlugForm = ({ onClick, packageName }: props) => {
             <label>Travel Date</label>
             <input
               type="date"
+              min={new Date().toISOString().split("T")[0]}
               {...register("travelDate", {
                 required: "travel date is required",
               })}
