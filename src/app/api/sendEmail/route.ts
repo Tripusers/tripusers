@@ -70,7 +70,7 @@ export async function POST(request: Request) {
       <!-- Dynamic Linking -->
       <!-- Dynamic Linking -->
       <a
-        href="https://www.tripusers.com/international/${dd.slug}"
+        href="https://www.tripusers.com/international/${dd.slug.current}"
         style="text-decoration: none"
       >
         <div
