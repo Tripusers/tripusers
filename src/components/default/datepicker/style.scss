@@ -76,7 +76,11 @@
   cursor: pointer;
 }
 
-.calendar span.date:hover {
+.calendar span.date.dis {
+  cursor: not-allowed;
+}
+
+.calendar span.date:not(.dis):hover {
   background-color: #f0f0f0;
 }
 

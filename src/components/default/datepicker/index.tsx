@@ -35,11 +35,6 @@ const DatePickerInput = ({
     return dates;
   };
   useEffect(() => {
-    console.log(
-      `${data.dd}/${data.mm}/${data.yyy}` !=
-        `${currentDate}/${currentMonth}/${currentYear}`
-    );
-
     if (
       `${data.dd}/${data.mm}/${data.yyy}` !=
       `${currentDate}/${currentMonth}/${currentYear}`
@@ -48,6 +43,7 @@ const DatePickerInput = ({
       setValue(`${data.dd}/${data.mm}/${data.yyy}`);
     }
   }, [data.dd]);
+
   // console.log(data);
   // console.log("date ==>", new Date(data.yyy, data.mm - 1, 1), data);
 
@@ -94,19 +90,19 @@ const DatePickerInput = ({
 
             <select
               onChange={(e) => {
-                // console.log(e.currentTarget.value);
-                setData(JSON.parse(e.currentTarget.value));
+                const yy = e.currentTarget.value;
+                console.log(yy);
+
+                setData((prev) => ({
+                  ...prev,
+                  yyy: parseInt(yy || ""),
+                }));
               }}
             >
-              <option value={JSON.stringify({ ...data, yyy: currentYear })}>
-                {currentYear}
-              </option>
+              <option value={currentYear}>{currentYear}</option>
               {[...new Array(100)].map((v, i) => (
-                <option
-                  key={i}
-                  value={JSON.stringify({ ...data, yyy: data.yyy + i + 1 })}
-                >
-                  {data.yyy + i + 1}
+                <option key={i} value={currentYear + i + 1}>
+                  {currentYear + i + 1}
                 </option>
               ))}
             </select>
@@ -119,17 +115,32 @@ const DatePickerInput = ({
               ...new Array(new Date(data.yyy, data.mm - 1, 1).getDay()).fill(
                 ""
               ),
-            ].map(() => (
-              <span></span>
+            ].map((v, i) => (
+              <span key={i}></span>
             ))}
             {generateCalendarDates().map((date, index) => (
               <span
-                className="date"
-                onClick={() => {
-                  setData((prv) => ({ ...prv, dd: date }));
-                  setOpen(false);
+                className={
+                  new Date(data.yyy, data.mm - 1, date).getTime() < Date.now()
+                    ? "date dis"
+                    : "date"
+                }
+                style={{
+                  color:
+                    new Date(data.yyy, data.mm - 1, date).getTime() < Date.now()
+                      ? "tomato"
+                      : "",
                 }}
                 key={index}
+                onClick={() => {
+                  if (
+                    new Date(data.yyy, data.mm - 1, date).getTime() >=
+                    Date.now()
+                  ) {
+                    setData((prv) => ({ ...prv, dd: date }));
+                    setOpen(false);
+                  }
+                }}
               >
                 {date}
               </span>
