@@ -1298,7 +1298,9 @@ export async function POST(request: Request) {
                                                               <td style="overflow-wrap: break-word; word-break: break-word; padding: 10px; font-family: arial,helvetica,sans-serif;"
                                                                   align="left">
                                                                   <div>
-                                                                      <p style="margin:0;color: #ffffff;">✉️ Write to us:
+                                                                      <p style="margin:0;color: #ffffff;"><img alt=""
+                                                                      src="https://i.postimg.cc/75p70NxP/mail-yellow-2x.png"
+                                                                      style="width: 15px;margin-bottom: -2px;" />
                                                                           <a style="color:white;text-decoration-color: #181818" target="_blank" href="mailto:info@tripusers.com"
                                                                               rel="noopener">
                                                                               <strong
@@ -2405,7 +2407,9 @@ export async function POST(request: Request) {
                                                         <td style="overflow-wrap: break-word; word-break: break-word; padding: 10px; font-family: arial,helvetica,sans-serif;"
                                                             align="left">
                                                             <div>
-                                                                <p style="margin:0;color: #ffffff;">✉️ Write to us:
+                                                                <p style="margin:0;color: #ffffff;"><img alt=""
+                                                                src="https://i.postimg.cc/75p70NxP/mail-yellow-2x.png"
+                                                                style="width: 15px;margin-bottom: -2px;" />
                                                                     <a style="color:white;text-decoration-color: #181818;" target="_blank" href="mailto:info@tripusers.com"
                                                                         rel="noopener">
                                                                         <strong
@@ -3598,7 +3602,9 @@ export async function POST(request: Request) {
                                                               <td style="overflow-wrap: break-word; word-break: break-word; padding: 10px; font-family: arial,helvetica,sans-serif;"
                                                                   align="left">
                                                                   <div>
-                                                                      <p style="margin:0;color: #ffffff;">✉️ Write to us:
+                                                                      <p style="margin:0;color: #ffffff;"><img alt=""
+                                                                      src="https://i.postimg.cc/75p70NxP/mail-yellow-2x.png"
+                                                                      style="width: 15px;margin-bottom: -2px;" />
                                                                           <a style="color:white;text-decoration-color: #181818;" target="_blank" href="mailto:info@tripusers.com"
                                                                               rel="noopener">
                                                                               <strong
@@ -4836,7 +4842,9 @@ export async function POST(request: Request) {
                                                               <td style="overflow-wrap: break-word; word-break: break-word; padding: 10px; font-family: arial,helvetica,sans-serif;"
                                                                   align="left">
                                                                   <div>
-                                                                      <p style="margin:0;color: #ffffff;">✉️ Write to us:
+                                                                      <p style="margin:0;color: #ffffff;"><img alt=""
+                                                                      src="https://i.postimg.cc/75p70NxP/mail-yellow-2x.png"
+                                                                      style="width: 15px;margin-bottom: -2px;" />
                                                                           <a style="color:white;text-decoration-color: #181818;" target="_blank" href="mailto:info@tripusers.com"
                                                                               rel="noopener">
                                                                               <strong
