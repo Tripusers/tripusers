@@ -243,6 +243,9 @@ const SlugForm = ({ onClick, packageName }: props) => {
             </div>
             <label>Travel Date</label>
             <input
+              onFocus={(e) => {
+                e.target.showPicker();
+              }}
               type="date"
               min={new Date().toISOString().split("T")[0]}
               {...register("travelDate", {
