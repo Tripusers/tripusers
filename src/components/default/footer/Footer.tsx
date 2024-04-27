@@ -23,6 +23,7 @@ import { footer } from "@/src/types/footer";
 import ImageSize from "@/src/utils/image-utils";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import IndiaFlag from "../../Icons/IndiaFlag";
 
 const Footer = () => {
   const [brand, setBrand] = useState<brand[]>();
@@ -146,17 +147,21 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-footer">
-          <p> © 2024 Tripusers.com. All Rights Reserved.</p>
-          <p id="India">
-            MADE IN 🇮🇳 WITH <span id="heart">❤</span>
-          </p>
-          <p>
-            Design & Developed by <br />
-            <span>
-              <Link href="https://thecirclstudio.com/">the circl studio</Link> &{" "}
-              <Link href="https://www.webstack.in/">webstack</Link>
-            </span>
-          </p>
+          <div className="one">
+            <p>
+              Made in <IndiaFlag /> with <span title="Love">❤</span>
+            </p>
+          </div>
+          <div className="two">
+            <p> © 2024 Tripusers.com. All Rights Reserved.</p>
+            <p>
+              Design & Developed by <br />
+              <span>
+                <Link href="https://thecirclstudio.com/">the circl studio</Link>{" "}
+                & <Link href="https://www.webstack.in/">webstack</Link>
+              </span>
+            </p>
+          </div>
         </div>
       </footer>
     </>
