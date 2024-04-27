@@ -1277,7 +1277,9 @@ export async function POST(request: Request) {
                                                               <td style="overflow-wrap: break-word; word-break: break-word; padding: 10px; font-family: arial,helvetica,sans-serif;"
                                                                   align="left">
                                                                   <div>
-                                                                      <p style="margin:0;color: #ffffff;">📞 Contact Us:
+                                                                      <p style="margin:0;color: #ffffff;"><img alt=""
+                                                                      src="https://i.postimg.cc/mPcCPnW6/call-yellow-2x.png"
+                                                                      style="width: 15px;height: 15px;margin-bottom: -2px;" />
                                                                           <a style="color:white;text-decoration-color: #181818;" target="_blank" href="tel:+91 8888800696"
                                                                               rel="noopener">
                                                                               <strong
@@ -2382,7 +2384,9 @@ export async function POST(request: Request) {
                                                         <td style="overflow-wrap: break-word; word-break: break-word; padding: 10px; font-family: arial,helvetica,sans-serif;"
                                                             align="left">
                                                             <div>
-                                                                <p style="margin:0;color: #ffffff;">📞 Contact Us:
+                                                                <p style="margin:0;color: #ffffff;"><img alt=""
+                                                                src="https://i.postimg.cc/mPcCPnW6/call-yellow-2x.png"
+                                                                style="width: 15px;height: 15px;margin-bottom: -2px;" />
                                                                     <a style="color:white;text-decoration-color: #181818;" target="_blank" href="tel:+91 8888800696"
                                                                         rel="noopener">
                                                                         <strong
@@ -3573,7 +3577,9 @@ export async function POST(request: Request) {
                                                               <td style="overflow-wrap: break-word; word-break: break-word; padding: 10px; font-family: arial,helvetica,sans-serif;"
                                                                   align="left">
                                                                   <div>
-                                                                      <p style="margin:0;color: #ffffff;">📞 Contact Us:
+                                                                      <p style="margin:0;color: #ffffff;"><img alt=""
+                                                                      src="https://i.postimg.cc/mPcCPnW6/call-yellow-2x.png"
+                                                                      style="width: 15px;height: 15px;margin-bottom: -2px;" />
                                                                           <a style="color:white;text-decoration-color: #181818;" target="_blank" href="tel:+91 8888800696"
                                                                               rel="noopener">
                                                                               <strong
@@ -4809,7 +4815,9 @@ export async function POST(request: Request) {
                                                               <td style="overflow-wrap: break-word; word-break: break-word; padding: 10px; font-family: arial,helvetica,sans-serif;"
                                                                   align="left">
                                                                   <div>
-                                                                      <p style="margin:0;color: #ffffff;">📞 Contact Us:
+                                                                      <p style="margin:0;color: #ffffff;"><img alt=""
+                                                                      src="https://i.postimg.cc/mPcCPnW6/call-yellow-2x.png"
+                                                                      style="width: 15px;height: 15px;margin-bottom: -2px;" />
                                                                           <a style="color:white;text-decoration-color: #181818;" target="_blank" href="tel:+91 8888800696"
                                                                               rel="noopener">
                                                                               <strong
