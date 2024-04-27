@@ -157,8 +157,13 @@ const Footer = () => {
             <p>
               Design & Developed by <br />
               <span>
-                <Link href="https://thecirclstudio.com/">the circl studio</Link>{" "}
-                & <Link href="https://www.webstack.in/">webstack</Link>
+                <Link href="https://thecirclstudio.com/" target="_blank">
+                  the circl studio
+                </Link>{" "}
+                &{" "}
+                <Link href="https://www.webstack.in/" target="_blank">
+                  webstack
+                </Link>
               </span>
             </p>
           </div>
