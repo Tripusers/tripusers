@@ -17,10 +17,10 @@ export async function POST(request: Request) {
       },
     });
     await account.verify();
-    const getTrend = await getTrendingInternational();
-    const SortGetTrend = getTrend.filter((v) => v.isTrending);
+    const getTrend = (await getTrendingInternational()) as any;
+    const SortGetTrend = getTrend.filter((v: any) => v.isTrending);
     const s = SortGetTrend.sort(() => Math.random() - 0.5);
-    const randomTrend = s.slice(0, 4).filter((v) => v);
+    const randomTrend = s.slice(0, 4).filter((v: any) => v);
     const reA = [
       [randomTrend[0], randomTrend[1]],
       [randomTrend[2], randomTrend[3]],
@@ -70,7 +70,7 @@ export async function POST(request: Request) {
       <!-- Dynamic Linking -->
       <!-- Dynamic Linking -->
       <a
-        href="https://www.tripusers.com/international/${dd.slug.current}"
+        href="https://www.tripusers.com/international/${dd.slug as string}"
         style="text-decoration: none"
       >
         <div
@@ -124,7 +124,9 @@ export async function POST(request: Request) {
                       <tbody>
                         <tr>
                           <td
-                            style="padding-right: 0px;padding-left: 0px;background-image: url('${dd.cardImage}');height: 200px;background-size: cover;background-repeat: no-repeat;background-position: center;border-radius: 10px;"
+                            style="padding-right: 0px;padding-left: 0px;background-image: url('${
+                              dd.cardImage
+                            }');height: 200px;background-size: cover;background-repeat: no-repeat;background-position: center;border-radius: 10px;"
                             align="center"
                           >
                           
