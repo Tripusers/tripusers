@@ -187,38 +187,48 @@ footer {
   }
 
   .footer-footer {
-    width: 100%;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    #India {
-      flex-direction: row;
+    .one {
+      width: 100%;
+      display: flex;
       justify-content: center;
-      text-align: center;
+      padding: 20px 0 0 0;
+      p {
+        display: flex;
+        align-items: center;
+        gap: 5px;
 
-      #heart {
-        color: $red;
-        font-size: 18px;
-        margin-left: 5px;
+        svg {
+          width: 14px;
+        }
+
+        span {
+          color: $red;
+        }
       }
     }
 
-    p {
-      text-align: center;
+    .two {
+      width: 100%;
+      padding-top: 20px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      opacity: 0.75;
+      gap: 10px;
 
-      span {
+      p {
+        text-align: center;
         display: flex;
-        gap: 5px;
-      }
+        flex-direction: column;
+        align-items: center;
+        opacity: 0.75;
 
-      a {
-        color: $yellow;
+        span {
+          display: flex;
+          gap: 5px;
+        }
+
+        a {
+          color: $yellow;
+        }
       }
     }
   }
@@ -247,6 +257,7 @@ footer {
       gap: 80px;
       padding: 20px 0;
       flex-direction: row-reverse;
+      width: 100%;
 
       form {
         width: 50%;
@@ -270,19 +281,16 @@ footer {
     }
 
     .footer-footer {
-      flex-direction: row;
-      justify-content: space-between;
-
-      #India {
-        #heart {
-          margin-left: 0px;
-        }
-      }
-
-      p {
+      width: 100%;
+      .two {
         flex-direction: row;
-        gap: 5px;
-        font-size: 0.9rem;
+        justify-content: space-between;
+
+        p {
+          flex-direction: row;
+          gap: 5px;
+          font-size: 0.9rem;
+        }
       }
     }
   }
@@ -364,21 +372,29 @@ footer {
     }
 
     .footer-footer {
-      padding: 10px 0;
-
-      #India {
-        #heart {
-          margin-left: 0px;
-          margin-top: -3px;
+      .one {
+        padding: 10px 0 0 0;
+        p {
+          svg {
+            width: 16px;
+          }
+          span {
+            margin-top: -1px;
+            font-size: 1.1rem;
+          }
         }
       }
-      p {
-        span {
-          a {
-            transition: color 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+      .two {
+        padding: 10px 0;
 
-            &:hover {
-              color: $red;
+        p {
+          span {
+            a {
+              transition: color 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+              &:hover {
+                color: $red;
+              }
             }
           }
         }

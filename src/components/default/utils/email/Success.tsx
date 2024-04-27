@@ -26,6 +26,14 @@ const Success = (props: { text: string }) => {
   return (
     <div id="successPopup" ref={ContainerRef}>
       <div className="success-card">
+        <div className="bg">
+          <Image
+            src="https://i.postimg.cc/rw6Mf66s/Doodle-2-2x.png"
+            alt="bg"
+            fill
+            sizes={ImageSize.bannerSizes}
+          />
+        </div>
         <button onClick={() => changeState(false)}>
           <AiFillCloseCircle />
         </button>
