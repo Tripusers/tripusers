@@ -128,7 +128,7 @@ const DatePickerInput = ({
                 style={{
                   color:
                     new Date(data.yyy, data.mm - 1, date).getTime() < Date.now()
-                      ? "tomato"
+                      ? "#8080807a"
                       : "",
                 }}
                 key={index}
