@@ -137,6 +137,7 @@ const Footer = () => {
               <Link href="/wild-life">Wildlife</Link>
               <Link href="/international">International</Link>
               <Link href="/about">About</Link>
+              <Link href="/testimonials">Testimonials</Link>
             </div>
             <div className="support">
               <h4>Support</h4>
