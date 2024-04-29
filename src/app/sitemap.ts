@@ -82,6 +82,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "monthly",
     },
+
     {
       url: "https://www.tripusers.com/special",
       lastModified: new Date(),
@@ -89,7 +90,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...all_special,
     {
-      url: "https://www.tripusers.com/terms-&amp;-conditions",
+      url: "https://www.tripusers.com/terms-&-conditions",
       lastModified: new Date(),
       changeFrequency: "monthly",
     },

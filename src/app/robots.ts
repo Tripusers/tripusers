@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: ["*"],
         allow: ["/"],
-        disallow: ["/admin/*", "/studio/*"],
+        disallow: ["/admin", "/studio"],
       },
     ],
     sitemap: "https://www.tripusers.com/sitemap.xml",
