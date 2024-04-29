@@ -7,6 +7,10 @@ import {
   getWildLife_site_map,
 } from "../sanity/sanity-utils";
 
+function escapeUrl(url: string): string {
+  return url.replace(/&/g, "&amp;");
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const get_all_domestic = await getDomestic_site_map();
   const get_all_international = await getInternational_site_map();
@@ -90,7 +94,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...all_special,
     {
-      url: "https://www.tripusers.com/terms-&-conditions",
+      url: escapeUrl("https://www.tripusers.com/terms-&-conditions"),
       lastModified: new Date(),
       changeFrequency: "monthly",
     },
