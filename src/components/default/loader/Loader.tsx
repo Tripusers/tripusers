@@ -59,6 +59,7 @@ const Loader = () => {
                 alt="loading animation"
                 fill
                 sizes={ImageSize.cardSize}
+                fetchPriority="high"
               />
             </div>
             <div className="travel-container">
@@ -67,6 +68,7 @@ const Loader = () => {
                 alt="loading animation"
                 fill
                 sizes={ImageSize.cardSize}
+                fetchPriority="high"
               />
             </div>
             <motion.p variants={opacity} initial="initial" animate="enter">
