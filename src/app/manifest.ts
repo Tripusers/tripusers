@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     start_url: "/",
     icons: [
       {
-        src: "favicon.ico",
+        src: "/favicon.ico",
         type: "image/x-icon",
         purpose: "badge",
         sizes: "any",
