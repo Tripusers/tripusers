@@ -103,87 +103,96 @@ const page = ({ params }: Props) => {
             <>
               {data.internationalPackages.map((item, index) => (
                 <div key={index} className="package">
-                  <div className="package-swiper-container">
-                    <Swiper
-                      autoplay={{
-                        delay: 4000,
-                        disableOnInteraction: false,
-                      }}
-                      navigation={true}
-                      //onSlideChange={onSildeChange}
-                      loop={true}
-                      modules={[Navigation, Autoplay]}
-                      className="mySwiper"
-                      speed={500}
-                      allowTouchMove={false}
-                      slidesPerView={1}
-                    >
-                      {item.packageImages &&
-                        item.packageImages.map((item, index) => (
-                          <SwiperSlide key={index} className="swiperSlide-card">
-                            <div className="bg-container">
-                              <Image
-                                src={item.url}
-                                alt="hero background"
-                                fill
-                                sizes={ImageSize.cardSize}
-                              />
-                            </div>
-                          </SwiperSlide>
-                        ))}
-                    </Swiper>
-                  </div>
-                  <div className="text-container">
-                    <div className="title">
-                      <Link href={`/international/${data.slug}/${item.slug}`}>
-                        <h3>{item.title}</h3>
-                      </Link>
-                      <p>{item.timeline}</p>
+                  <div className="package-top">
+                    <div className="package-swiper-container">
+                      <Swiper
+                        autoplay={{
+                          delay: 4000,
+                          disableOnInteraction: false,
+                        }}
+                        navigation={true}
+                        //onSlideChange={onSildeChange}
+                        loop={true}
+                        modules={[Navigation, Autoplay]}
+                        className="mySwiper"
+                        speed={500}
+                        allowTouchMove={false}
+                        slidesPerView={1}
+                      >
+                        {item.packageImages &&
+                          item.packageImages.map((item, index) => (
+                            <SwiperSlide
+                              key={index}
+                              className="swiperSlide-card"
+                            >
+                              <div className="bg-container">
+                                <Image
+                                  src={item.url}
+                                  alt="hero background"
+                                  fill
+                                  sizes={ImageSize.cardSize}
+                                />
+                              </div>
+                            </SwiperSlide>
+                          ))}
+                      </Swiper>
                     </div>
-                    <div className="icons">
-                      {item.addOns != null && (
-                        <>
-                          {item.addOns.isHotels && (
-                            <span>
-                              <RiHotelFill />
-                              <p>{iconsData.hotels}</p>
-                            </span>
-                          )}
-                          {item.addOns.isFood && (
-                            <span>
-                              <ImSpoonKnife />
-                              <p>{iconsData.food}</p>
-                            </span>
-                          )}
-                          {item.addOns.isTransport && (
-                            <span>
-                              <FaCarAlt />
-                              <p>{iconsData.transport}</p>
-                            </span>
-                          )}
-                          {item.addOns.isFlight && (
-                            <span>
-                              <FaPlane />
-                              <p>{iconsData.flight}</p>
-                            </span>
-                          )}
-                          {item.addOns.isSightseeing && (
-                            <span>
-                              <RiLandscapeFill />
-                              <p>{iconsData.sightseeing}</p>
-                            </span>
-                          )}
-                          {item.addOns.isVisa && (
-                            <span>
-                              <FaPassport />
-                              <p>{iconsData.visas}</p>
-                            </span>
-                          )}
-                        </>
-                      )}
+                    <div className="text-container">
+                      <div className="title">
+                        <Link href={`/international/${data.slug}/${item.slug}`}>
+                          <h3>{item.title}</h3>
+                        </Link>
+                        <p>{item.timeline}</p>
+                      </div>
+                      <div className="icons">
+                        {item.addOns != null && (
+                          <>
+                            {item.addOns.isHotels && (
+                              <span>
+                                <RiHotelFill />
+                                <p>{iconsData.hotels}</p>
+                              </span>
+                            )}
+                            {item.addOns.isFood && (
+                              <span>
+                                <ImSpoonKnife />
+                                <p>{iconsData.food}</p>
+                              </span>
+                            )}
+                            {item.addOns.isTransport && (
+                              <span>
+                                <FaCarAlt />
+                                <p>{iconsData.transport}</p>
+                              </span>
+                            )}
+                            {item.addOns.isFlight && (
+                              <span>
+                                <FaPlane />
+                                <p>{iconsData.flight}</p>
+                              </span>
+                            )}
+                            {item.addOns.isSightseeing && (
+                              <span>
+                                <RiLandscapeFill />
+                                <p>{iconsData.sightseeing}</p>
+                              </span>
+                            )}
+                            {item.addOns.isVisa && (
+                              <span>
+                                <FaPassport />
+                                <p>{iconsData.visas}</p>
+                              </span>
+                            )}
+                          </>
+                        )}
+                      </div>
                     </div>
                   </div>
-                  <div className="line" />
+                  <div className="gap">
+                    <div className="ticket-card-circle top" />
+                    <div className="line" />
+                    <div className="ticket-card-circle bottom" />
+                  </div>
                   <div className="cta-container">
                     <div className="price-container">
                       <p className="deal">{item.deal}</p>

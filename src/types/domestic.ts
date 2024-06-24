@@ -1,4 +1,18 @@
 import { PortableTextBlock } from "sanity";
+
+export type DomesticCard = {
+  title: string;
+  image: "string";
+};
+
+export type MustDoThings = {
+  isTrue: boolean;
+  heading: string;
+  subHeading: string;
+  description: string;
+  cards: DomesticCard[];
+};
+
 export type DomesticPackages = {
   _id: string;
   _createdAt: Date;
@@ -55,4 +69,5 @@ export type Domestic = {
     url: string;
   }[];
   domesticPackages: DomesticPackages[];
+  mustDoThings: MustDoThings;
 };

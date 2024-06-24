@@ -418,6 +418,16 @@ export async function getDomesticSlug(slug: string): Promise<Domestic> {
         "_id": asset->_id,
         "url": asset->url,
       },
+      "mustDoThings": mustDoThings {
+        isTrue,
+        heading,
+        subHeading,
+        description,
+        "cards": cards[] {
+          title,
+          "image": image.asset->url
+        }
+      },
       "domesticPackages": *[_type == "domesticPackages" && references(^._id)] {
         _id,
         _createdAt,

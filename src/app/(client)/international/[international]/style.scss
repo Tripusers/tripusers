@@ -82,8 +82,8 @@
 }
 
 #packages {
-  max-width: 100vw;
-  width: 100%;
+  width: 100vw;
+  max-width: 100%;
   padding: 20px 4vw 40px 4vw;
   display: flex;
   flex-direction: column;
@@ -98,12 +98,22 @@
 
     .package {
       width: 100%;
-      padding: 10px;
-      border-radius: 10px;
+      background-color: $light;
+      overflow: hidden;
+      position: relative;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      box-shadow: 0px 0px 1px $dark;
+
+      .package-top {
+        padding: 10px 10px 20px 10px;
+        border-radius: 10px 10px 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-top: 1px solid $dark;
+        border-left: 1px solid $dark;
+        border-right: 1px solid $dark;
+      }
 
       .package-swiper-container {
         width: 100%;
@@ -216,11 +226,42 @@
         }
       }
 
-      .line {
-        width: 100%;
-        height: 1px;
-        margin: 10px 0;
-        border-bottom: 1px dashed $yellow;
+      .gap {
+        display: flex;
+        align-items: center;
+        min-height: 40px;
+
+        .line {
+          width: 100%;
+          height: 1px;
+
+          background-image: linear-gradient(
+            90deg,
+            #d7d7d7 33%,
+            hsla(0, 0%, 100%, 0) 0
+          );
+          background-position: bottom;
+          background-size: 14px 1px;
+          background-repeat: repeat-x;
+        }
+
+        .ticket-card-circle {
+          width: 40px;
+          aspect-ratio: 1 / 1;
+          border-radius: 1000px;
+          border: 1px solid $dark;
+          position: absolute;
+          background-color: $light;
+        }
+
+        .top {
+          width: 40px;
+          left: -20px;
+        }
+
+        .bottom {
+          right: -20px;
+        }
       }
 
       .cta-container {
@@ -228,6 +269,12 @@
         flex-direction: column;
         position: relative;
         gap: 10px;
+        padding: 10px;
+
+        border-bottom: 1px solid $dark;
+        border-left: 1px solid $dark;
+        border-right: 1px solid $dark;
+        border-radius: 0 0 10px 10px;
 
         .price-container {
           display: flex;
@@ -279,6 +326,112 @@
   }
 }
 
+#mustDoThings {
+  width: 100vw;
+  max-width: 100%;
+  background-color: rgba(29, 29, 31, 1);
+  color: $offLight;
+  padding: 50px 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      h3 {
+        font-family: $cookie;
+        font-weight: 100;
+        color: $red;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+
+      button {
+        width: 40px;
+        aspect-ratio: 1 / 1;
+        background-color: $offLight;
+        border-radius: 100px;
+        color: $dark;
+        display: grid;
+        place-content: center;
+
+        svg {
+          font-size: 1.4rem;
+          color: $yellow;
+        }
+      }
+    }
+  }
+
+  .right {
+    width: 100%;
+
+    .slider-container {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+
+      .slick-slide {
+        padding: 0 2vw;
+      }
+      .slick-list {
+        margin: 0 -2vw;
+      }
+
+      .slide {
+        width: 100%;
+
+        .card {
+          width: 100%;
+          aspect-ratio: 2 / 3;
+          position: relative;
+          overflow: hidden;
+          border-radius: 10px;
+          display: flex;
+          align-items: flex-end;
+          padding: 14px;
+
+          &::after {
+            position: absolute;
+            content: "";
+            background: linear-gradient(
+              rgba(35, 35, 35, 0) 60%,
+              rgba(35, 35, 35, 0.75) 100%
+            );
+            top: auto;
+            bottom: 0px;
+            height: 100%;
+            display: block;
+            left: 0px;
+            width: 100%;
+          }
+
+          img {
+            object-fit: cover;
+            z-index: 0;
+          }
+
+          p {
+            position: relative;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
 //*---------->> Tablet
 
 @media screen and (min-width: 820px) {
@@ -306,15 +459,24 @@
       .package {
         height: 100%;
         flex-direction: row;
-        gap: 20px;
+
+        .package-top {
+          flex-direction: row;
+          gap: 20px;
+          border-right: none;
+          border-bottom: 1px solid $dark;
+          border-radius: 10px 0 0 10px;
+          padding: 10px 0 10px 10px;
+          width: calc(70% - 40px);
+        }
 
         .package-swiper-container {
           width: 300px;
         }
 
         .text-container {
-          width: 50%;
-          padding: 30px 0;
+          width: 60%;
+          padding: 50px 0;
           justify-content: space-between;
 
           .title {
@@ -324,19 +486,46 @@
           }
         }
 
-        .line {
-          width: 1px;
+        .gap {
+          flex-direction: column;
+          align-items: center;
           height: auto;
-          margin: 0;
-          border: none;
-          border-left: 2px dashed $yellow;
+          min-width: 40px;
+
+          .line {
+            width: 1px;
+            height: 100%;
+
+            background-image: linear-gradient(
+              0deg,
+              #d7d7d7 33%,
+              hsla(0, 0%, 100%, 0) 0
+            );
+
+            background-position: bottom;
+            background-size: 1px 14px;
+            background-repeat: repeat-y;
+          }
+
+          .top {
+            top: -20px;
+            left: auto;
+          }
+
+          .bottom {
+            right: auto;
+            bottom: -20px;
+          }
         }
 
         .cta-container {
           width: 40%;
           justify-content: center;
           gap: 20px;
-          padding-right: 10px;
+          padding-right: 20px;
+          border-left: none;
+          border-top: 1px solid $dark;
+          border-radius: 0 10px 10px 0;
 
           .price-container {
             flex-direction: column;
@@ -369,6 +558,39 @@
       }
     }
   }
+
+  #mustDoThings {
+    flex-direction: row;
+    .left {
+      width: 40%;
+      .text-container {
+        h3 {
+          font-size: 1.4rem;
+        }
+
+        h2 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .right {
+      width: 60%;
+
+      .slider-container {
+        .slick-slide {
+          padding: 0 1vw;
+        }
+        .slick-list {
+          margin: 0 -1vw;
+        }
+      }
+    }
+  }
 }
 
 //*---------->> desktop
@@ -380,17 +602,40 @@
   }
 
   #packages {
-    padding: 20px 16vw 40px 16vw;
+    padding: 20px 12vw 40px 12vw;
     gap: 40px;
 
     .packages-container {
       .package {
+        &:hover {
+          .package-top {
+            border-color: $yellow;
+          }
+          .cta-container {
+            border-color: $yellow;
+          }
+
+          .gap {
+            .ticket-card-circle {
+              border-color: $yellow;
+            }
+
+            .line {
+              background-image: linear-gradient(
+                0deg,
+                $yellow 33%,
+                hsla(0, 0%, 100%, 0) 0
+              );
+            }
+          }
+        }
+
         .package-swiper-container {
-          width: 200px;
+          width: 300px;
         }
         .text-container {
-          padding: 30px 0;
-          width: 45%;
+          padding: 60px 0;
+          width: 50%;
 
           h3 {
             transition: color 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -409,6 +654,7 @@
         }
         .cta-container {
           width: 30%;
+          padding-right: 30px;
 
           .links {
             a {
@@ -428,6 +674,69 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+
+  #mustDoThings {
+    padding: 80px 12vw;
+    gap: 50px;
+
+    .left {
+      width: 30%;
+
+      .text-container {
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      .buttons {
+        button {
+          transition: background 300ms ease-in-out;
+
+          svg {
+            transition: color 300ms ease-in-out;
+          }
+
+          &:hover {
+            background-color: $yellow;
+
+            svg {
+              color: $offLight;
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      width: 70%;
+      .slider-container {
+        position: relative;
+        &::after {
+          position: absolute;
+          content: "";
+          background: linear-gradient(
+            -90deg,
+            rgba(35, 35, 35, 0) 0%,
+            rgba(35, 35, 35, 0) 50%,
+            rgba(29, 29, 31, 1) 100%
+          );
+          top: auto;
+          bottom: 0px;
+          height: 100%;
+          display: block;
+          left: 0px;
+          width: 40%;
+        }
+        cursor: grab;
+        .slick-slide {
+          padding: 0 10px;
+        }
+        .slick-list {
+          margin: 0 -10px;
         }
       }
     }
