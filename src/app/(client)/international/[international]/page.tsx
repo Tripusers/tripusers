@@ -1,5 +1,7 @@
 "use client";
 
+import { FaWallet } from "react-icons/fa";
+import { AiFillSafetyCertificate } from "react-icons/ai";
 import { FaCarAlt } from "react-icons/fa";
 import { FaPlane } from "react-icons/fa";
 import { FaPassport } from "react-icons/fa";
@@ -296,6 +298,28 @@ const page = ({ params }: Props) => {
                     </div>
                   ))}
               </Slider>
+            </div>
+          </div>
+        </section>
+      )}
+      {data.travelTips && data.travelTips.isTrue && (
+        <section id="travelTips">
+          <h3>{data.travelTips.title}</h3>
+          <div className="container">
+            <div className="card">
+              <FaPassport />
+              <h3>{data.travelTips.cards.cardOne.title}</h3>
+              <p>{data.travelTips.cards.cardOne.description}</p>
+            </div>
+            <div className="card">
+              <AiFillSafetyCertificate />
+              <h3>{data.travelTips.cards.cardTwo.title}</h3>
+              <p>{data.travelTips.cards.cardTwo.description}</p>
+            </div>
+            <div className="card">
+              <FaWallet />
+              <h3>{data.travelTips.cards.cardThree.title}</h3>
+              <p>{data.travelTips.cards.cardThree.description}</p>
             </div>
           </div>
         </section>

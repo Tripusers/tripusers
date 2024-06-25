@@ -137,6 +137,82 @@ const international = {
         },
       ],
     },
+    {
+      name: "travelTips",
+      title: "Travel Tips",
+      type: "object",
+      fields: [
+        {
+          name: "isTrue",
+          title: "Is true",
+          type: "boolean",
+          initialValue: false,
+        },
+        {
+          name: "title",
+          title: "Title",
+          type: "string",
+        },
+        {
+          name: "cards",
+          title: "Cards",
+          type: "object",
+          fields: [
+            {
+              name: "cardOne",
+              title: "Card One (Visa)",
+              type: "object",
+              fields: [
+                {
+                  name: "title",
+                  title: "Title",
+                  type: "string",
+                },
+                {
+                  name: "description",
+                  title: "Description",
+                  type: "text",
+                },
+              ],
+            },
+            {
+              name: "cardTwo",
+              title: "Card Two (Safety)",
+              type: "object",
+              fields: [
+                {
+                  name: "title",
+                  title: "Title",
+                  type: "string",
+                },
+                {
+                  name: "description",
+                  title: "Description",
+                  type: "text",
+                },
+              ],
+            },
+            {
+              name: "cardThree",
+              title: "Card Three (Currency)",
+              type: "object",
+              fields: [
+                {
+                  name: "title",
+                  title: "Title",
+                  type: "string",
+                },
+                {
+                  name: "description",
+                  title: "Description",
+                  type: "text",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
 

@@ -177,6 +177,24 @@ export async function getInternationalSlug(
           "image": image.asset->url
         }
       },
+      "travelTips": travelTips {
+        isTrue,
+        title,
+        "cards": cards {
+          "cardOne": cardOne {
+            title,
+            description,
+          },
+          "cardTwo": cardTwo {
+            title,
+            description,
+          },
+          "cardThree": cardThree {
+            title,
+            description,
+          }
+        }
+      },
       "internationalPackages": *[_type == "internationalPackages" && references(^._id)] {
         _id,
         _createdAt,

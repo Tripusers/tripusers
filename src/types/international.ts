@@ -13,6 +13,22 @@ export type MustDoThings = {
   cards: Cards[];
 };
 
+export type Card = {
+  title: string;
+  description: "string";
+};
+
+export type TravelTips = {
+  isTrue: boolean;
+  title: string;
+
+  cards: {
+    cardOne: Card;
+    cardTwo: Card;
+    cardThree: Card;
+  };
+};
+
 export type Hotspot = {
   width: number;
   height: number;
@@ -82,4 +98,5 @@ export type international = {
   }[];
   internationalPackages: internationalPackages[];
   mustDoThings: MustDoThings;
+  travelTips: TravelTips;
 };
