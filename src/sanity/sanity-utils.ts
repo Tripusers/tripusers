@@ -167,6 +167,16 @@ export async function getInternationalSlug(
         "_id": asset->_id,
         "url": asset->url,
       },
+      "mustDoThings": mustDoThings {
+        isTrue,
+        heading,
+        subHeading,
+        description,
+        "cards": cards[] {
+          title,
+          "image": image.asset->url
+        }
+      },
       "internationalPackages": *[_type == "internationalPackages" && references(^._id)] {
         _id,
         _createdAt,
@@ -774,6 +784,16 @@ export async function getSpecialSlug(slug: string): Promise<special> {
         "_id": asset->_id,
         "url": asset->url,
       },
+      "mustDoThings": mustDoThings {
+        isTrue,
+        heading,
+        subHeading,
+        description,
+        "cards": cards[] {
+          title,
+          "image": image.asset->url
+        }
+      },
       "specialPackages": *[_type == "specialPackages" && references(^._id)] {
         _id,
         _createdAt,
@@ -1050,6 +1070,19 @@ export async function getFooter(): Promise<footer> {
   );
 }
 
+export async function getBottomBanner(): Promise<footer> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "footer"][0]{
+      _id,
+      _createdAt,
+      "bottomBanner": bottomBanner {
+        headline,
+        description,
+        "image": image.asset->url
+      }
+    }`
+  );
+}
 //* ---------------------> Privacy Policy And Tnc
 
 export async function getPrivacyPolicyAndTnc(): Promise<PrivacyPolicyAndTnc> {

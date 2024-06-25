@@ -1,4 +1,18 @@
 import { PortableTextBlock } from "sanity";
+
+export type Cards = {
+  title: string;
+  image: "string";
+};
+
+export type MustDoThings = {
+  isTrue: boolean;
+  heading: string;
+  subHeading: string;
+  description: string;
+  cards: Cards[];
+};
+
 export type wildlifePackage = {
   _id: string;
   _createdAt: Date;
@@ -55,4 +69,5 @@ export type wildLife = {
     url: string;
   }[];
   wildlifePackage: wildlifePackage[];
+  mustDoThings: MustDoThings;
 };

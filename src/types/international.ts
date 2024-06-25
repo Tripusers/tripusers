@@ -1,5 +1,18 @@
 import { PortableTextBlock } from "sanity";
 
+export type Cards = {
+  title: string;
+  image: "string";
+};
+
+export type MustDoThings = {
+  isTrue: boolean;
+  heading: string;
+  subHeading: string;
+  description: string;
+  cards: Cards[];
+};
+
 export type Hotspot = {
   width: number;
   height: number;
@@ -68,4 +81,5 @@ export type international = {
     url: string;
   }[];
   internationalPackages: internationalPackages[];
+  mustDoThings: MustDoThings;
 };

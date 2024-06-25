@@ -53,6 +53,28 @@ const footer = {
       title: "Twitter Link",
       type: "string",
     },
+    {
+      name: "bottomBanner",
+      title: "Bottom Banner",
+      type: "object",
+      fields: [
+        {
+          name: "headline",
+          title: "Headline",
+          type: "string",
+        },
+        {
+          name: "description",
+          title: "Description",
+          type: "text",
+        },
+        {
+          name: "image",
+          title: "Image",
+          type: "image",
+        },
+      ],
+    },
   ],
 };
 

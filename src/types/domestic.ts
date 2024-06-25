@@ -1,6 +1,6 @@
 import { PortableTextBlock } from "sanity";
 
-export type DomesticCard = {
+export type Cards = {
   title: string;
   image: "string";
 };
@@ -10,7 +10,7 @@ export type MustDoThings = {
   heading: string;
   subHeading: string;
   description: string;
-  cards: DomesticCard[];
+  cards: Cards[];
 };
 
 export type DomesticPackages = {

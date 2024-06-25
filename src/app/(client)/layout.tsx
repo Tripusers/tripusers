@@ -4,6 +4,7 @@ import Header from "@/src/components/default/header/Header";
 
 import Footer from "@/src/components/default/footer/Footer";
 import { SuccessPopUpProvider } from "@/src/providers/SuccessPop";
+import BottomBanner from "@/src/components/default/bottomBanner/BottomBanner";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -55,6 +56,7 @@ export default function RootLayout({
         <SuccessPopUpProvider>
           <Header />
           <main>{children}</main>
+          <BottomBanner />
           <Footer />
         </SuccessPopUpProvider>
       </body>

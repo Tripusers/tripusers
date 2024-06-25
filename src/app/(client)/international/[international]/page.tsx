@@ -8,7 +8,7 @@ import { RiHotelFill, RiLandscapeFill } from "react-icons/ri";
 
 import { getInternationalSlug } from "@/src/sanity/sanity-utils";
 import { international } from "@/src/types/international";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./style.scss";
 import PageLoading from "@/src/components/default/loader/PageLoading";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -24,6 +24,11 @@ import CustomiseForm from "@/src/components/forms/CustomiseForm";
 import ImageSize from "@/src/utils/image-utils";
 import SlugForm from "@/src/components/slugForm/SlugForm";
 import iconsData from "@/src/utils/icons-utils";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 type Props = {
   params: { international: string };
@@ -34,6 +39,7 @@ const page = ({ params }: Props) => {
   const [mobileForm, setMobileForm] = useState(false);
   const [packageName, setPackageName] = useState("");
   const slug = params.international;
+  const sliderRef = useRef<Slider | null>(null);
 
   useEffect(() => {
     async function fetchInternationalSlug() {
@@ -46,6 +52,36 @@ const page = ({ params }: Props) => {
     }
     fetchInternationalSlug();
   }, [slug]);
+
+  const next = () => {
+    sliderRef.current?.slickNext();
+  };
+  const previous = () => {
+    sliderRef.current?.slickPrev();
+  };
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: false,
+    navigator: false,
+    easing: "easeInOut",
+    arrows: false,
+    swipeToSlide: true,
+    touchMove: true,
+    responsive: [
+      {
+        breakpoint: 819,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   //console.log("internationalSlugData->", data);
 
@@ -224,6 +260,46 @@ const page = ({ params }: Props) => {
           )}
         </div>
       </section>
+
+      {data.mustDoThings && data.mustDoThings.isTrue && (
+        <section id="mustDoThings">
+          <div className="left">
+            <div className="text-container">
+              <h3>{data.mustDoThings.subHeading}</h3>
+              <h2>{data.mustDoThings.heading}</h2>
+              <p>{data.mustDoThings.description}</p>
+            </div>
+            <div className="buttons">
+              <button onClick={previous}>
+                <AiOutlineLeft />
+              </button>
+              <button onClick={next}>
+                <AiOutlineRight />
+              </button>
+            </div>
+          </div>
+          <div className="right">
+            <div className="slider-container">
+              <Slider {...settings} ref={sliderRef}>
+                {data.mustDoThings.cards &&
+                  data.mustDoThings.cards.map((item, i) => (
+                    <div className="slide" key={i}>
+                      <div className="card">
+                        <Image
+                          src={item.image}
+                          alt="card image"
+                          fill
+                          sizes={ImageSize.cardSize}
+                        />
+                        <p>{item.title}</p>
+                      </div>
+                    </div>
+                  ))}
+              </Slider>
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 };

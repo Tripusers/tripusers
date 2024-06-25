@@ -1,3 +1,9 @@
+export type bottomBanner = {
+  headline: string;
+  description: string;
+  image: string;
+};
+
 export type footer = {
   _id: string;
   _createdAt: Date;
@@ -11,4 +17,5 @@ export type footer = {
   facebook: string;
   instagram: string;
   twitter: string;
+  bottomBanner: bottomBanner;
 };

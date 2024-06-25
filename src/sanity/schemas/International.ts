@@ -87,6 +87,56 @@ const international = {
       },
       validation: (Rule: any) => Rule.required(),
     },
+    {
+      name: "mustDoThings",
+      title: "Must do things",
+      type: "object",
+      fields: [
+        {
+          name: "isTrue",
+          title: "Is true",
+          type: "boolean",
+          initialValue: false,
+        },
+        {
+          name: "heading",
+          title: "Heading",
+          type: "string",
+        },
+        {
+          name: "subHeading",
+          title: "Sub Heading",
+          type: "string",
+        },
+        {
+          name: "description",
+          title: "Description",
+          type: "text",
+        },
+        {
+          name: "cards",
+          title: "Cards",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              fields: [
+                {
+                  name: "title",
+                  title: "Title",
+                  type: "string",
+                },
+                {
+                  name: "image",
+                  title: "Image",
+                  type: "image",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
 
