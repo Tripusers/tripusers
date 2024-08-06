@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./scss/globals.scss";
 import Header from "@/src/components/default/header/Header";
-
 import Footer from "@/src/components/default/footer/Footer";
 import { SuccessPopUpProvider } from "@/src/providers/SuccessPop";
 import BottomBanner from "@/src/components/default/bottomBanner/BottomBanner";
@@ -16,12 +15,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.tripusers.com/"),
   title: {
     default: "tripusers.com",
-    template: "%s | tripusers.com",
+    template: "%s | tripusers",
   },
   keywords: [
     "tripusers.com",
     "Tripusers.com",
     "Tripusers",
+    "tripusers",
     "trip users",
     "Trip Users",
     "travel agency in India",
