@@ -57,16 +57,13 @@ const Testimonials = () => {
 
   const fetchTrendingTestimonialData = async () => {
     const trendingTestimonialData = await getTrendingTestimonials();
-    setTrendingTestimonial(() =>
-      getRandomUniqueElements(trendingTestimonialData, 5)
-    );
+    setTrendingTestimonial(getRandomUniqueElements(trendingTestimonialData, 5));
   };
 
   useEffect(() => {
     fetchTrendingData();
     fetchTrendingTestimonialData();
   }, []);
-
   //console.log("fetchTrending ->", trending);
   //console.log("fetchTrendingTestimonial ->", trendingTestimonial);
 
@@ -166,9 +163,10 @@ const Testimonials = () => {
                   <h3>{data?.title}</h3>
                 </Link>
                 <div className="hashtags">
-                  {data.hashtags?.map((data, index) => (
-                    <p key={index}>#{data.name}</p>
-                  ))}
+                  {data.hashtags &&
+                    data.hashtags.map((data, index) => (
+                      <p key={index}>#{data.name}</p>
+                    ))}
                 </div>
                 <p className="shortReview">{data.shortReview}</p>
                 <div className="profile-container">
@@ -187,7 +185,11 @@ const Testimonials = () => {
                     </div>
                     <div className="profile-info">
                       <h4>{data.profile.name}</h4>
-                      <p>{data.reviewDate.toString()}</p>
+                      <p>
+                        {data.reviewDate
+                          ? data.reviewDate.toString()
+                          : "Unknown Date"}
+                      </p>
                     </div>
                   </div>
                   <div className="rating-container">
