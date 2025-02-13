@@ -85,7 +85,7 @@ export async function getTrending(): Promise<trending> {
 export async function getInternational(
   page: number = 1,
   pageSize: number = 9
-): Promise<{ data: international[]; totalPages: number }> {
+): Promise<{ data: international[]; totalPages: number; }> {
   const start = (page - 1) * pageSize;
   const end = start + pageSize;
 
@@ -364,7 +364,7 @@ export async function getTrendingInternational(): Promise<international[]> {
 export async function getDomestic(
   page: number = 1,
   pageSize: number = 9
-): Promise<{ data: Domestic[]; totalPages: number }> {
+): Promise<{ data: Domestic[]; totalPages: number; }> {
   const start = (page - 1) * pageSize;
   const end = start + pageSize;
 
@@ -570,7 +570,7 @@ export async function getTrendingDomestic(): Promise<Domestic[]> {
 export async function getWildLife(
   page: number = 1,
   pageSize: number = 9
-): Promise<{ data: wildLife[]; totalPages: number }> {
+): Promise<{ data: wildLife[]; totalPages: number; }> {
   const start = (page - 1) * pageSize;
   const end = start + pageSize;
 
@@ -932,7 +932,7 @@ export async function getTrendingTestimonials(): Promise<Testimonial[]> {
 export async function getTestimonials(
   page: number = 1,
   pageSize: number = 6
-): Promise<{ data: Testimonial[]; totalPages: number }> {
+): Promise<{ data: Testimonial[]; totalPages: number; }> {
   const start = (page - 1) * pageSize;
   const end = start + pageSize;
 
@@ -1001,6 +1001,8 @@ export async function getTestimonialSlug(slug: string): Promise<Testimonial> {
       "images": images[] {
         "_id": asset->_id,
         "url": asset->url,
+        "hotspot": hotspot,
+        "crop": crop,
       },
       fullReview,
     }`,

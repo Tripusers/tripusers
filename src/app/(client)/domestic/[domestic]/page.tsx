@@ -266,7 +266,7 @@ const page = ({ params }: Props) => {
           )}
         </div>
       </section>
-      {data.mustDoThings.isTrue && (
+      {data.mustDoThings && data.mustDoThings.isTrue && (
         <section id="mustDoThings">
           <div className="left">
             <div className="text-container">

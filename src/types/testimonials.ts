@@ -22,6 +22,18 @@ export type Testimonial = {
   images: {
     _id: string;
     url: string;
+    hotspot: {
+      height: number;
+      width: number;
+      x: number;
+      y: number;
+    };
+    crop: {
+      right: number;
+      top: number;
+      left: number;
+      bottom: number;
+    };
   }[];
   fullReview: PortableTextBlock[];
 };

@@ -90,6 +90,11 @@ const page = ({ params }: Props) => {
                   alt="hero background"
                   fill
                   sizes={ImageSize.bannerSizes}
+                  style={{
+                    objectPosition: `${item.hotspot?.x * 100}% ${
+                      item.hotspot?.y * 100
+                    }%`,
+                  }}
                 />
               </div>
             </SwiperSlide>
