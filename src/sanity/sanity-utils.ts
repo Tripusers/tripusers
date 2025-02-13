@@ -325,7 +325,7 @@ export async function getSliderHomeInternational(): Promise<international[]> {
       _createdAt,
       name,
       "slug": slug.current,
-      "cardImage": cardImage.{asset->{url}, hotspot, crop},
+      "cardImage": cardImage{asset->{url}, hotspot, crop},
       isTrending,
       isTrendingHome,
       isTrendingSlider,
@@ -755,7 +755,7 @@ export async function getTrendingWildLife(): Promise<wildLife[]> {
       _createdAt,
       name,
       "slug": slug.current,
-      "cardImage": cardImage.{asset->{url}, hotspot, crop},
+      "cardImage": cardImage{asset->{url}, hotspot, crop},
       "wildlifePackage": *[_type == "wildLifePackage" && references(^._id)] {
         _id,
         _createdAt,
