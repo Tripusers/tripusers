@@ -8,7 +8,7 @@ const page = () => {
   const router = useRouter();
 
   useLayoutEffect(() => {
-    router.push("/");
+    router.push("/#specialPackages");
   }, []);
   return <Loader />;
 };

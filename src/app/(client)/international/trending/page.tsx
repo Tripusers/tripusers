@@ -43,7 +43,7 @@ const page = () => {
               <div className="img-container">
                 {data?.cardImage && (
                   <Image
-                    src={data.cardImage}
+                    src={data.cardImage.asset.url}
                     alt="hero background"
                     fill
                     sizes={ImageSize.cardSize}

@@ -108,12 +108,14 @@ const page = ({ params }: Props) => {
       <section id="testimonialSlugData">
         <div className="top">
           <div className="img-container">
-            <Image
-              src={testimonialData?.cardImage}
-              alt="hero background"
-              fill
-              sizes={ImageSize.cardSize}
-            />
+            {testimonialData && (
+              <Image
+                src={testimonialData.cardImage.asset.url}
+                alt="hero background"
+                fill
+                sizes={ImageSize.cardSize}
+              />
+            )}
           </div>
           <div className="right">
             <h2>{testimonialData?.title}</h2>

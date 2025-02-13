@@ -58,7 +58,7 @@ const Trending = () => {
           >
             {item.cardImage && (
               <Image
-                src={item.cardImage}
+                src={item.cardImage.asset.url}
                 alt={`image of  ${item.name}`}
                 fill
                 sizes={ImageSize.bannerSizes}

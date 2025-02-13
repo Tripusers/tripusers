@@ -43,12 +43,14 @@ const SwiperHero = ({ data, title }: { data: Domestic[]; title: string }) => {
           <SwiperSlide key={index} className="swiperSlide-card">
             <div className="bg-container">
               <div className="bg" />
-              <Image
-                src={item.cardImage}
-                alt="hero background"
-                fill
-                sizes={ImageSize.cardSize}
-              />
+              {item.cardImage && (
+                <Image
+                  src={item.cardImage.asset.url}
+                  alt="hero background"
+                  fill
+                  sizes={ImageSize.cardSize}
+                />
+              )}
             </div>
           </SwiperSlide>
         ))}

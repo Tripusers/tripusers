@@ -58,7 +58,7 @@ const page = () => {
     router.push("/international/#internationalSlugHero");
   };
 
-  //console.log("InternationalData->", InternationalData);
+  //console.log("InternationalData->", international);
 
   if (!international) {
     return <PageLoading />;
@@ -83,7 +83,7 @@ const page = () => {
               <div className="img-container">
                 {data?.cardImage && (
                   <Image
-                    src={data.cardImage}
+                    src={data.cardImage.asset.url}
                     alt="hero background"
                     fill
                     sizes={ImageSize.cardSize}

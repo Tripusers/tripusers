@@ -9,7 +9,23 @@ export type Testimonial = {
   };
   reviewDate: Date;
   tripTo: string;
-  cardImage: string;
+  cardImage: {
+    asset: {
+      url: string;
+    };
+    hotspot: {
+      height: number;
+      width: number;
+      x: number;
+      y: number;
+    };
+    crop: {
+      right: number;
+      top: number;
+      left: number;
+      bottom: number;
+    };
+  };
   profile: {
     name: string;
     image: string;

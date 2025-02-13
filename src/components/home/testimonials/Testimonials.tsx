@@ -114,12 +114,14 @@ const Testimonials = () => {
                 className="swiper-slide swiperSlide-card"
               >
                 <Link href={`/testimonials/${data.slug}`}>
-                  <Image
-                    src={data?.cardImage}
-                    alt="hero background"
-                    fill
-                    sizes={ImageSize.cardSize}
-                  />
+                  {data && data.cardImage && (
+                    <Image
+                      src={data.cardImage.asset.url}
+                      alt="hero background"
+                      fill
+                      sizes={ImageSize.cardSize}
+                    />
+                  )}
                 </Link>
               </SwiperSlide>
             ))}

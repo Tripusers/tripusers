@@ -76,7 +76,7 @@ const page = () => {
     router.push("/testimonials/#testimonialsData");
   };
 
-  //console.log("Testimonials ->", testimonials);
+  console.log("Testimonials ->", testimonials);
 
   const getStarColor = (
     rating: string | undefined,
@@ -114,10 +114,15 @@ const page = () => {
                 <div className="bg-container">
                   <div className="bg" />
                   <Image
-                    src={data?.cardImage}
+                    src={data?.cardImage.asset.url}
                     alt="hero background"
                     fill
                     sizes={ImageSize.bannerSizes}
+                    style={{
+                      objectPosition: `${data.cardImage.hotspot?.x * 100}% ${
+                        data.cardImage.hotspot?.y * 100
+                      }%`,
+                    }}
                   />
                 </div>
               </SwiperSlide>
@@ -141,7 +146,7 @@ const page = () => {
                 className="img-container"
               >
                 <Image
-                  src={data?.cardImage}
+                  src={data?.cardImage.asset.url}
                   alt="hero background"
                   fill
                   sizes={ImageSize.cardSize}

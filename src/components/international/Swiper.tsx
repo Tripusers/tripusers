@@ -41,10 +41,15 @@ const SwiperHero = ({
             <div className="bg-container">
               <div className="bg" />
               <Image
-                src={item.cardImage}
+                src={item.cardImage.asset.url}
                 alt="hero background"
                 fill
                 sizes={ImageSize.bannerSizes}
+                style={{
+                  objectPosition: `${item.cardImage.hotspot?.x * 100}% ${
+                    item.cardImage.hotspot?.y * 100
+                  }%`,
+                }}
               />
             </div>
           </SwiperSlide>

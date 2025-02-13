@@ -1,4 +1,5 @@
 import { PortableTextBlock } from "sanity";
+import { Crop, Hotspot } from "./types";
 
 export type Cards = {
   title: string;
@@ -29,12 +30,8 @@ export type TravelTips = {
   };
 };
 
-export type Hotspot = {
-  width: number;
-  height: number;
-  x: number;
-  y: number;
-};
+
+
 export type CardImageHotspot = Hotspot;
 
 export type internationalPackages = {
@@ -48,6 +45,8 @@ export type internationalPackages = {
   packageImages: {
     _id: string;
     url: string;
+    hotspot: Hotspot;
+    crop: Crop;
   }[];
   timeline: string;
   addOns: {
@@ -86,7 +85,14 @@ export type international = {
   slug: {
     current: string;
   };
-  cardImage: string;
+  cardImage: {
+    asset: {
+      _id: string;
+      url: string;
+    };
+    hotspot: Hotspot;
+    crop: Crop;
+  };
   cardImageHotspot: CardImageHotspot;
   isTrending: boolean;
   isTrendingHome: boolean;
@@ -95,6 +101,8 @@ export type international = {
   bannerImages: {
     _id: string;
     url: string;
+    hotspot: Hotspot;
+    crop: Crop;
   }[];
   internationalPackages: internationalPackages[];
   mustDoThings: MustDoThings;

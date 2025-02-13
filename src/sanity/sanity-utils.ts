@@ -95,7 +95,7 @@ export async function getInternational(
       _createdAt,
       name,
       "slug": slug.current,
-      "cardImage": cardImage.asset->url,
+      "cardImage": cardImage{asset->{url},hotspot,crop},
       "bannerImages": bannerImages[] {
         "_id": asset->_id,
         "url": asset->url,
@@ -162,10 +162,12 @@ export async function getInternationalSlug(
       _createdAt,
       name,
       "slug": slug.current,
-      "cardImage": cardImage.asset->url,
+      "cardImage": cardImage{asset->{url},hotspot, crop},
       "bannerImages": bannerImages[] {
         "_id": asset->_id,
         "url": asset->url,
+        hotspot,
+        crop,
       },
       "mustDoThings": mustDoThings {
         isTrue,
@@ -294,7 +296,7 @@ export async function getTrendingHomeInternational(
       _createdAt,
       name,
       "slug": slug.current,
-      "cardImage": cardImage.asset->url,
+      "cardImage": cardImage{asset->{url}, hotspot, crop},
       "cardImageHotspot": cardImage.hotspot{
         width,
         height,
@@ -323,7 +325,7 @@ export async function getSliderHomeInternational(): Promise<international[]> {
       _createdAt,
       name,
       "slug": slug.current,
-      "cardImage": cardImage.asset->url,
+      "cardImage": cardImage.{asset->{url}, hotspot, crop},
       isTrending,
       isTrendingHome,
       isTrendingSlider,
@@ -344,7 +346,7 @@ export async function getTrendingInternational(): Promise<international[]> {
       _createdAt,
       name,
       "slug": slug.current,
-      "cardImage": cardImage.asset->url,
+      "cardImage": cardImage{asset->{url}, hotspot, crop},
       isTrending,
       "internationalPackages": *[_type == "internationalPackages" && references(^._id)] {
         _id,
@@ -375,7 +377,7 @@ export async function getDomestic(
       name,
       isTrending,
       "slug": slug.current,
-      "cardImage": cardImage.asset->url,
+      "cardImage": cardImage{asset->{url}, hotspot, crop},
       "bannerImages": bannerImages[] {
         "_id": asset->_id,
         "url": asset->url,
@@ -445,6 +447,8 @@ export async function getDomesticSlug(slug: string): Promise<Domestic> {
       "bannerImages": bannerImages[] {
         "_id": asset->_id,
         "url": asset->url,
+        hotspot,
+        crop,
       },
       "mustDoThings": mustDoThings {
         isTrue,
@@ -554,7 +558,7 @@ export async function getTrendingDomestic(): Promise<Domestic[]> {
       name,
       isTrending,
       "slug": slug.current,
-      "cardImage": cardImage.asset->url,
+      "cardImage": cardImage{asset->{url}, hotspot, crop},
       "domesticPackages": *[_type == "domesticPackages" && references(^._id)] {
         _id,
         _createdAt,
@@ -580,7 +584,7 @@ export async function getWildLife(
       _createdAt,
       name,
       "slug": slug.current,
-      "cardImage": cardImage.asset->url,
+      "cardImage": cardImage{asset->{url}, hotspot, crop},
       "bannerImages": bannerImages[] {
         "_id": asset->_id,
         "url": asset->url,
@@ -649,6 +653,8 @@ export async function getWildLifeSlug(slug: string): Promise<wildLife> {
       "bannerImages": bannerImages[] {
         "_id": asset->_id,
         "url": asset->url,
+        hotspot,
+        crop,
       },
       "wildlifePackage": *[_type == "wildLifePackage" && references(^._id)] {
         _id,
@@ -706,6 +712,8 @@ export async function getWildlifePackagesSlug(
       "packageImages": packageImages[] {
         "_id": asset->_id,
         "url": asset->url,
+        hotspot,
+        crop,
       },
       timeline,
       "addOns": addOns {
@@ -747,7 +755,7 @@ export async function getTrendingWildLife(): Promise<wildLife[]> {
       _createdAt,
       name,
       "slug": slug.current,
-      "cardImage": cardImage.asset->url,
+      "cardImage": cardImage.{asset->{url}, hotspot, crop},
       "wildlifePackage": *[_type == "wildLifePackage" && references(^._id)] {
         _id,
         _createdAt,
@@ -801,6 +809,8 @@ export async function getSpecialSlug(slug: string): Promise<special> {
       "bannerImages": bannerImages[] {
         "_id": asset->_id,
         "url": asset->url,
+        hotspot,
+        crop,
       },
       "mustDoThings": mustDoThings {
         isTrue,
@@ -870,6 +880,8 @@ export async function getSpecialPackagesSlug(
       "packageImages": packageImages[] {
         "_id": asset->_id,
         "url": asset->url,
+        hotspot,
+        crop,
       },
       timeline,
       "addOns": addOns {
@@ -913,7 +925,7 @@ export async function getTrendingTestimonials(): Promise<Testimonial[]> {
       _createdAt,
       title,
       "slug": slug.current,
-      "cardImage": cardImage.asset->url,
+      "cardImage": cardImage{asset->{url}, hotspot, crop},
       reviewDate,
       shortReview,
       tripTo,
@@ -947,7 +959,7 @@ export async function getTestimonials(
       "hashtags": hashtags[] {
         name,
       },
-      "cardImage": cardImage.asset->url,    
+      "cardImage": cardImage{asset->{url},hotspot,crop},    
       "profile": profile {
         name,
         "image": image.asset->url,

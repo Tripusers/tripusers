@@ -1,4 +1,5 @@
 import { PortableTextBlock } from "sanity";
+import { Crop, Hotspot } from "./types";
 
 export type Cards = {
   title: string;
@@ -24,6 +25,8 @@ export type DomesticPackages = {
   packageImages: {
     _id: string;
     url: string;
+    hotspot: Hotspot;
+    crop: Crop;
   }[];
   timeline: string;
   addOns: {
@@ -62,11 +65,20 @@ export type Domestic = {
   slug: {
     current: string;
   };
-  cardImage: string;
+  cardImage: {
+    asset: {
+      _id: string;
+      url: string;
+    },
+    hotspot: Hotspot;
+    crop: Crop;
+  };
   isTrending: boolean;
   bannerImages: {
     _id: string;
     url: string;
+    hotspot: Hotspot;
+    crop: Crop;
   }[];
   domesticPackages: DomesticPackages[];
   mustDoThings: MustDoThings;

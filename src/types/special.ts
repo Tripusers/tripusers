@@ -1,4 +1,5 @@
 import { PortableTextBlock } from "sanity";
+import { Crop, Hotspot } from "./types";
 
 export type Cards = {
   title: string;
@@ -25,6 +26,8 @@ export type specialPackages = {
   packageImages: {
     _id: string;
     url: string;
+    hotspot: Hotspot;
+    crop: Crop;
   }[];
   timeline: string;
   addOns: {
@@ -69,6 +72,8 @@ export type special = {
   bannerImages: {
     _id: string;
     url: string;
+    hotspot: Hotspot;
+    crop: Crop;
   }[];
   specialPackages: specialPackages[];
   mustDoThings: MustDoThings;

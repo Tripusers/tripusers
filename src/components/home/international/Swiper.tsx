@@ -44,7 +44,7 @@ const SwiperContainer = ({ data }: { data: international[] }) => {
             <Link href={`/international/${item.slug}`} key={index}>
               {item.cardImage && (
                 <Image
-                  src={item.cardImage}
+                  src={item.cardImage.asset.url}
                   alt="hero background"
                   fill
                   sizes={ImageSize.cardSize}

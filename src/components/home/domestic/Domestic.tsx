@@ -6,11 +6,11 @@ import { HiLocationMarker } from "react-icons/hi";
 import SwiperContainer from "./Swiper";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Domestic } from "@/src/types/domestic";
 import { trending } from "@/src/types/trending";
+import { type Domestic } from "@/src/types/domestic";
 
 const Domestic = () => {
-  const [domestic, setDomestic] = useState<Domestic[]>();
+  const [domestic, setDomestic] = useState<Domestic[]>([]);
   const [trending, setTrending] = useState<trending>();
   useEffect(() => {
     const fetchDomestic = async () => {
