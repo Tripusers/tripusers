@@ -1003,7 +1003,7 @@ export async function getTestimonialSlug(slug: string): Promise<Testimonial> {
       "hashtags": hashtags[] {
         name,
       },
-      "cardImage": cardImage.asset->url,    
+      "cardImage": cardImage{asset->{url},hotspot, crop},    
       "profile": profile {
         name,
         "image": image.asset->url,
