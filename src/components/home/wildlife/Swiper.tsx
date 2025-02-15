@@ -55,7 +55,7 @@ const SwiperContainer = ({ data }: { data: wildLife[] }) => {
                 <h3>{item.name}</h3>
                 {item.wildlifePackage && (
                   <p>
-                    Starts from ₹
+                    Starts from ₹{" "}
                     {item.wildlifePackage.length == 0 ||
                     item.wildlifePackage[0].price == null
                       ? 1500

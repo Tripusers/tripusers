@@ -55,7 +55,7 @@ const SwiperContainer = ({ data }: { data: Domestic[] }) => {
                 <h3>{item.name}</h3>
                 {item.domesticPackages && (
                   <p>
-                    Starts from ₹
+                    Starts from ₹{" "}
                     {item.domesticPackages.length == 0
                       ? 1500
                       : item.domesticPackages[0].price.toLocaleString("en-IN")}

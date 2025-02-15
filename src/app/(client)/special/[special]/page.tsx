@@ -240,7 +240,7 @@ const page = ({ params }: Props) => {
                       <div className="price">
                         <p>Starts from</p>
                         <h4>
-                          ₹{item.price.toLocaleString("en-in")}{" "}
+                          ₹ {item.price.toLocaleString("en-in")}{" "}
                           {item.priceActual && (
                             <span id="actualPrice">
                               ₹ {item.priceActual.toLocaleString("en-in")}
