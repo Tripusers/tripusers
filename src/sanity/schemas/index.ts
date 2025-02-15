@@ -16,6 +16,7 @@ import footer from "./footer";
 import about from "./about";
 import privacyPolicyAndTnc from "./privacyPolicyAndTnc";
 import testimonials from "./testimonials";
+import itinerary from "./itinerary";
 
 const schemas = [
   brand,
@@ -35,6 +36,7 @@ const schemas = [
   testimonials,
   footer,
   privacyPolicyAndTnc,
+  itinerary,
 ];
 
 export default schemas;
