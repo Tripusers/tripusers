@@ -111,6 +111,12 @@ const InternationalPackages = {
       validation: (Rule: any) => Rule.required(),
     },
     {
+      name: "priceActual",
+      title: "Actual Price",
+      type: "number",
+      validation: (Rule: any) => Rule.required(),
+    },
+    {
       name: "priceSubtitle",
       title: "Price Subtitle",
       type: "string",

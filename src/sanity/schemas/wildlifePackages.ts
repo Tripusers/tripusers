@@ -111,6 +111,12 @@ const wildlifePackage = {
       validation: (Rule: any) => Rule.required(),
     },
     {
+      name: "priceActual",
+      title: "Price Actual",
+      type: "number",
+      validation: (Rule: any) => Rule.required(),
+    },
+    {
       name: "priceSubtitle",
       title: "Price Subtitle",
       type: "string",

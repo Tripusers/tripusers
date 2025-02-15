@@ -40,6 +40,7 @@ export type specialPackages = {
   };
   deal: string;
   price: number;
+  priceActual: number;
   priceSubtitle: string;
   aboutTheTour: PortableTextBlock[];
   inclusion: PortableTextBlock[];

@@ -1,0 +1,51 @@
+@use "@/src/app/(client)/scss/variables" as *;
+
+#EndOfTrip {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  h5 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .endOfTrip {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    padding-inline: 10%;
+
+    //*---------->> Desktop
+
+    @media screen and (min-width: 1025px) {
+      gap: 2rem;
+    }
+
+    .line {
+      width: 25%;
+      height: 1.4px;
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0) 0%,
+        $yellow 50%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    }
+
+    h3 {
+      font-family: $cookie;
+      font-weight: 100;
+      font-size: 1.5rem;
+      color: $yellow;
+
+      //*---------->> Desktop
+
+      @media screen and (min-width: 1025px) {
+        font-size: 2rem;
+      }
+    }
+  }
+}

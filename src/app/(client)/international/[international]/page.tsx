@@ -22,7 +22,6 @@ import "swiper/css/effect-fade";
 
 import Image from "next/image";
 import Link from "next/link";
-import CustomiseForm from "@/src/components/forms/CustomiseForm";
 import ImageSize from "@/src/utils/image-utils";
 import SlugForm from "@/src/components/slugForm/SlugForm";
 import iconsData from "@/src/utils/icons-utils";
@@ -31,6 +30,7 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import SaveMoney from "@/src/components/saveMoney/SaveMoney";
 
 type Props = {
   params: { international: string };
@@ -241,7 +241,21 @@ const page = ({ params }: Props) => {
                       <p className="deal">{item.deal}</p>
                       <div className="price">
                         <p>Starts from</p>
-                        <h4>₹ {item.price.toLocaleString("en-in")}</h4>
+                        <h4>
+                          ₹ {item.price.toLocaleString("en-in")}{" "}
+                          {item.priceActual && (
+                            <span id="actualPrice">
+                              ₹ {item?.priceActual.toLocaleString("en-in")}
+                            </span>
+                          )}
+                        </h4>
+                        {item.price && item.priceActual && (
+                          <SaveMoney
+                            price={item?.price}
+                            priceActual={item?.priceActual}
+                            height="20"
+                          />
+                        )}
                         <p>{item.priceSubtitle}</p>
                       </div>
                     </div>

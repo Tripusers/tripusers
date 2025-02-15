@@ -39,6 +39,7 @@ export type wildlifePackage = {
   };
   deal: string;
   price: number;
+  priceActual: number;
   priceSubtitle: string;
   inclusion: PortableTextBlock[];
   aboutTheTour: PortableTextBlock[];

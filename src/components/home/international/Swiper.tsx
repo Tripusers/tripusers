@@ -55,7 +55,7 @@ const SwiperContainer = ({ data }: { data: international[] }) => {
                 <h3>{item.name}</h3>
                 {item.internationalPackages && (
                   <p>
-                    Starts from{" "}
+                    Starts from ₹
                     {item.internationalPackages.length == 0
                       ? 1500
                       : item.internationalPackages[0].price.toLocaleString(

@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.domesticPackages;
   const meta = await getDomesticPackagesSlug(slug);
   return {
-    title: meta.title,
+    title: meta.title || "tripusers",
   };
 }
 

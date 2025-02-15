@@ -23,6 +23,8 @@ import { specialPackages } from "@/src/types/special";
 import SlugForm from "@/src/components/slugForm/SlugForm";
 import ImageSize from "@/src/utils/image-utils";
 import iconsData from "@/src/utils/icons-utils";
+import SaveMoney from "@/src/components/saveMoney/SaveMoney";
+import EndOfTrip from "@/src/components/endOfTrip/EndOfTrip";
 
 type Props = {
   params: {
@@ -173,7 +175,17 @@ const page = ({ params }: Props) => {
           </div>
           <div className="cta-container">
             <p className="deal">{data?.deal}</p>
-            <h4>₹ {data?.price.toLocaleString("en-in")}</h4>
+            <h4>
+              ₹ {data?.price.toLocaleString("en-in")}{" "}
+              {data.priceActual && (
+                <span id="actualPrice">
+                  ₹ {data.priceActual.toLocaleString("en-in")}
+                </span>
+              )}
+            </h4>
+            {data.price && data.priceActual && (
+              <SaveMoney price={data.price} priceActual={data.priceActual} />
+            )}
             <p>{data?.priceSubtitle}</p>
             <button onClick={() => setForm(true)}>Send Enquiry</button>
           </div>
@@ -243,6 +255,7 @@ const page = ({ params }: Props) => {
             </Accordion>
           </div>
         </div>
+        <EndOfTrip />
       </section>
     </>
   );

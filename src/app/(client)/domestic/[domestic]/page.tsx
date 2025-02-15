@@ -32,6 +32,7 @@ import iconsData from "@/src/utils/icons-utils";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import SaveMoney from "@/src/components/saveMoney/SaveMoney";
 
 type Props = {
   params: { domestic: string };
@@ -245,7 +246,19 @@ const page = ({ params }: Props) => {
                       <p className="deal">{item.deal}</p>
                       <div className="price">
                         <p>Starts from</p>
-                        <h4>₹ {item.price.toLocaleString("en-in")}</h4>
+                        <h4>
+                          ₹ {item.price.toLocaleString("en-in")}{" "}
+                          {item.priceActual && (
+                            <span id="actualPrice">
+                              ₹ {item.priceActual.toLocaleString("en-in")}
+                            </span>
+                          )}
+                        </h4>
+                        <SaveMoney
+                          price={item.price}
+                          priceActual={item.priceActual}
+                          height="20"
+                        />
                         <p>{item.priceSubtitle}</p>
                       </div>
                     </div>
