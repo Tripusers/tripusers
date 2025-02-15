@@ -95,7 +95,7 @@ const page = () => {
                   <h3>{data.name}</h3>
                   {data.domesticPackages && (
                     <p>
-                      Starts from ₹
+                      Starts from ₹{" "}
                       {data.domesticPackages.length == 0
                         ? 1500
                         : data?.domesticPackages[0].price.toLocaleString(
