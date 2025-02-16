@@ -12,13 +12,18 @@ const itinerary = {
       validation: (Rule: any) => Rule.required(),
     },
     {
+      name: "clientNumber",
+      title: "Client Number",
+      type: "string",
+    },
+    {
       name: "tripTo",
       title: "Trip To",
       type: "string",
       validation: (Rule: any) => Rule.required(),
     },
     {
-      name: "Date",
+      name: "date",
       title: "Date",
       type: "datetime",
       validation: (Rule: any) => Rule.required(),
@@ -46,7 +51,7 @@ const itinerary = {
       validation: (Rule: any) => Rule.required(),
     },
     {
-      name: "Days",
+      name: "days",
       title: "Days",
       type: "number",
       validation: (Rule: any) => Rule.required(),
@@ -121,6 +126,7 @@ const itinerary = {
       title: "Inclusion",
       type: "array",
       of: [{ type: "block" }],
+      validation: (Rule: any) => Rule.required(),
     },
     {
       name: "itinerary",
@@ -140,6 +146,12 @@ const itinerary = {
               name: "day",
               title: "Day",
               type: "number",
+              validation: (Rule: any) => Rule.required(),
+            },
+            {
+              name: "date",
+              title: "Date",
+              type: "datetime",
               validation: (Rule: any) => Rule.required(),
             },
             {
@@ -236,6 +248,111 @@ const itinerary = {
                 },
               ],
             },
+            {
+              name: "stay",
+              title: "Stay",
+              type: "object",
+              fields: [
+                {
+                  name: "title",
+                  title: "Title",
+                  type: "string",
+                },
+                {
+                  name: "startsAt",
+                  title: "Starts At",
+                  type: "number",
+                  description: "Time in hours (0-24)",
+                },
+                {
+                  name: "endsAt",
+                  title: "Ends At",
+                  type: "number",
+                  description: "Time in hours (0-24) | Check In Time",
+                },
+                {
+                  name: "endDate",
+                  title: "End Date",
+                  type: "datetime",
+                  description: "Check Out Date",
+                },
+                {
+                  name: "duration",
+                  title: "Duration",
+                  type: "number",
+                },
+                {
+                  name: "isNight",
+                  title: "Is Night?",
+                  type: "boolean",
+                  initialValue: false,
+                },
+                {
+                  name: "stayDetails",
+                  title: "Stay Details",
+                  type: "object",
+                  fields: [
+                    {
+                      name: "title",
+                      title: "Title",
+                      type: "string",
+                    },
+                    {
+                      name: "subTitle",
+                      title: "Sub Title",
+                      type: "string",
+                    },
+                    {
+                      name: "rooms",
+                      title: "Rooms",
+                      type: "array",
+                      of: [
+                        {
+                          type: "object",
+                          fields: [
+                            {
+                              name: "room",
+                              title: "Room",
+                              type: "string",
+                            },
+                            {
+                              name: "roomDetails",
+                              title: "Room Details",
+                              type: "string",
+                            },
+                          ],
+                        },
+                      ]
+                    },
+                    {
+                      name: "inclusions",
+                      title: "Inclusions",
+                      type: "object",
+                      fields: [
+                        {
+                          name: "isBreakfastIncluded",
+                          title: "Breakfast Included?",
+                          type: "boolean",
+                          initialValue: false,
+                        },
+                        {
+                          name: "isLunchIncluded",
+                          title: "Lunch Included?",
+                          type: "boolean",
+                          initialValue: false,
+                        },
+                        {
+                          name: "isDinnerIncluded",
+                          title: "Dinner Included?",
+                          type: "boolean",
+                          initialValue: false,
+                        },
+                      ],
+                    }
+                  ],
+                },
+              ],
+            },
           ],
         },
       ],
@@ -245,6 +362,13 @@ const itinerary = {
       title: "Exclusion",
       type: "array",
       of: [{ type: "block" }],
+    },
+    {
+      name: "notes",
+      title: "Notes",
+      type: "array",
+      of: [{ type: "block" }],
+      description: "Any important notes about the itinerary (optional)",
     },
     {
       name: "fareBreakup",
@@ -271,6 +395,11 @@ const itinerary = {
           title: "Tax",
           type: "number",
         },
+        {
+          name: "taxAmount",
+          title: "Tax Amount",
+          type: "number",
+        }
       ],
     },
   ],

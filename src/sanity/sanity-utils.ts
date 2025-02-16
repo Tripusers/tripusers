@@ -14,6 +14,7 @@ import { footer } from "../types/footer";
 import { About } from "../types/about";
 import { PrivacyPolicyAndTnc } from "../types/privacyPolicyAndTnc";
 import Testimonial from "../types/testimonials";
+import { Itinerary } from "../types/itinerary";
 
 //*------------------> Brand
 
@@ -1143,6 +1144,100 @@ export async function getPrivacyPolicyAndTnc(): Promise<PrivacyPolicyAndTnc> {
         "bannerImage":bannerImage.asset->url,
         content,
       },
+    }`
+  );
+}
+
+//* ---------------------> Itinerary
+
+export async function getItinerary(): Promise<Itinerary[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "clientItinerarys"] {
+      _id,
+      _createdAt,
+      clientName,
+      clientNumber,
+      tripTo,
+      date,
+      adults,
+      children,
+      infant,
+      "cardImage": cardImage{asset->{url, _id}, hotspot, crop},
+      days,
+      nights,
+      title,
+      activities,
+      hotels,
+      price,
+      priceActual,
+      "coverImages": coverImages[] {
+        "_id": asset->_id,
+        "url": asset->url,
+        hotspot,
+        crop,
+      },
+      "placeImages": placeImages[] {
+        "_id": asset->_id,
+        "url": asset->url,
+        hotspot,
+        crop,
+      },
+      inclusion,
+      "itinerary": itinerary[] {
+        title,
+        day,
+        date,
+        description,
+        "activaties": activaties[] {
+          title,
+          duration,
+          ticketIncluded,
+          "images": images[] {
+            "_id": asset->_id,
+            "url": asset->url,
+            hotspot,
+            crop,
+          },
+          description,
+          experiences {
+            title,
+            "images": images[] {
+              "image": image{asset->{url, _id}, hotspot, crop},
+              caption,
+            }
+          }
+        },
+        stay {
+          title,
+          startsAt,
+          endsAt,
+          endDate,
+          duration,
+          isNight,
+          stayDetails {
+            title,
+            subTitle,
+            "rooms": rooms[] {
+              room,
+              roomDetails,
+            },
+            inclusions {
+              isBreakfastIncluded,
+              isLunchIncluded,
+              isDinnerIncluded,
+            }
+          }
+        }
+      },
+      exclusion,
+      notes,
+      fareBreakup {
+        perAdult,
+        perChild,
+        perInfant,
+        tax,
+        taxAmount,
+      }
     }`
   );
 }
