@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { trending } from "@/src/types/trending";
 import { type Domestic } from "@/src/types/domestic";
+import Slick from "../slick/Slick";
 
 const Domestic = () => {
   const [domestic, setDomestic] = useState<Domestic[]>([]);
@@ -37,7 +38,7 @@ const Domestic = () => {
         <p>{trending?.domesticSubtitle}</p>
         <Link href="/domestic">View All</Link>
       </div>
-      {domestic && <SwiperContainer data={domestic} />}
+      {domestic && <Slick data={domestic} />}
     </section>
   );
 };

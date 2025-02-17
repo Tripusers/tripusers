@@ -358,9 +358,6 @@ export async function getTrendingInternational(): Promise<international[]> {
         price,
       },
     }`,
-    {
-      cache: "no-store",
-    }
   );
 }
 
