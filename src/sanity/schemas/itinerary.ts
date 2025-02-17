@@ -6,6 +6,12 @@ const itinerary = {
   type: "document",
   fields: [
     {
+      name: "title",
+      title: "Title",
+      type: "string",
+      validation: (Rule: any) => Rule.required(),
+    },
+    {
       name: "clientName",
       title: "Client Name",
       type: "string",
@@ -27,6 +33,12 @@ const itinerary = {
       title: "Date",
       type: "datetime",
       validation: (Rule: any) => Rule.required(),
+    },
+    {
+      name: "deal",
+      title: "Deal",
+      type: "string",
+      description: "If the itinerary is a deal, then enter the deal name here",
     },
     {
       name: "adults",
@@ -62,8 +74,8 @@ const itinerary = {
       type: "number",
     },
     {
-      name: "title",
-      title: "Title",
+      name: "itineraryTitle",
+      title: "Itinerary Title",
       type: "string",
       validation: (Rule: any) => Rule.required(),
     },
