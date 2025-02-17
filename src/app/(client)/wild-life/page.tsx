@@ -2,7 +2,6 @@
 
 import { getWildLife } from "@/src/sanity/sanity-utils";
 import "@/src/app/(client)/international/style.scss";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { wildLife } from "@/src/types/wildlife";
@@ -82,10 +81,9 @@ const page = () => {
             >
               <div className="img-container">
                 {data?.cardImage && (
-                  <Image
+                  <img
                     src={data.cardImage.asset.url}
                     alt="hero background"
-                    fill
                     sizes={ImageSize.cardSize}
                   />
                 )}

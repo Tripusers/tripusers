@@ -4,7 +4,6 @@ import "./style.scss";
 import PageLoading from "@/src/components/default/loader/PageLoading";
 import { getTestimonialSlug, getTrending } from "@/src/sanity/sanity-utils";
 import Testimonial from "@/src/types/testimonials";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectFade, Autoplay } from "swiper/modules";
@@ -85,10 +84,9 @@ const page = ({ params }: Props) => {
             <SwiperSlide key={index} className="swiperSlide-card">
               <div className="bg-container">
                 <div className="bg" />
-                <Image
+                <img
                   src={item.url}
                   alt="hero background"
-                  fill
                   sizes={ImageSize.bannerSizes}
                   style={{
                     objectPosition: `${item.hotspot?.x * 100}% ${
@@ -109,10 +107,9 @@ const page = ({ params }: Props) => {
         <div className="top">
           <div className="img-container">
             {testimonialData && (
-              <Image
+              <img
                 src={testimonialData.cardImage.asset.url}
                 alt="hero background"
-                fill
                 sizes={ImageSize.cardSize}
               />
             )}
@@ -130,10 +127,9 @@ const page = ({ params }: Props) => {
               <div className="profile">
                 <div className="img-container">
                   {testimonialData?.profile.image ? (
-                    <Image
+                    <img
                       src={testimonialData?.profile.image}
                       alt="hero background"
-                      fill
                       sizes={ImageSize.cardSize}
                     />
                   ) : (
@@ -189,10 +185,9 @@ const page = ({ params }: Props) => {
           {testimonialData &&
             testimonialData?.images.map((item, index) => (
               <SwiperSlide key={index} className="swiperSlide-card">
-                <Image
+                <img
                   src={item.url}
                   alt="hero background"
-                  fill
                   sizes={ImageSize.cardSize}
                 />
               </SwiperSlide>

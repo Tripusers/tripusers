@@ -5,7 +5,6 @@ import {
 } from "@/src/sanity/sanity-utils";
 import "./style.scss";
 import { HiLocationMarker } from "react-icons/hi";
-import Image from "next/image";
 import Link from "next/link";
 
 import { useEffect, useState } from "react";
@@ -57,10 +56,9 @@ const Trending = () => {
             className="country"
           >
             {item.cardImage && (
-              <Image
+              <img
                 src={item.cardImage.asset.url}
                 alt={`image of  ${item.name}`}
-                fill
                 sizes={ImageSize.bannerSizes}
                 style={{
                   objectPosition: `${item.cardImageHotspot?.x * 100}% ${

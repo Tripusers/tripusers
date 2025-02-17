@@ -5,7 +5,6 @@ import Testimonial from "@/src/types/testimonials";
 import { useEffect, useState } from "react";
 import "./style.scss";
 import { trending } from "@/src/types/trending";
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectFade, Autoplay } from "swiper/modules";
 
@@ -113,10 +112,9 @@ const page = () => {
               <SwiperSlide key={index} className="swiperSlide-card">
                 <div className="bg-container">
                   <div className="bg" />
-                  <Image
+                  <img
                     src={data?.cardImage.asset.url}
                     alt="hero background"
-                    fill
                     sizes={ImageSize.bannerSizes}
                     style={{
                       objectPosition: `${data.cardImage.hotspot?.x * 100}% ${
@@ -145,10 +143,9 @@ const page = () => {
                 href={`/testimonials/${data.slug}`}
                 className="img-container"
               >
-                <Image
+                <img
                   src={data?.cardImage.asset.url}
                   alt="hero background"
-                  fill
                   sizes={ImageSize.cardSize}
                 />
               </Link>
@@ -166,10 +163,9 @@ const page = () => {
                   <div className="profile">
                     <div className="img-container">
                       {data.profile.image ? (
-                        <Image
+                        <img
                           src={data.profile.image}
                           alt="hero background"
-                          fill
                           sizes={ImageSize.cardSize}
                         />
                       ) : (

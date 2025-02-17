@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectFade, Autoplay } from "swiper/modules";
 import Link from "next/link";
@@ -43,10 +42,9 @@ const SwiperContainer = ({ data }: { data: wildLife[] }) => {
           <SwiperSlide key={index} className="swiperSlide-card">
             <Link href={`/wild-life/${item.slug}`} key={index}>
               {item.cardImage && (
-                <Image
+                <img
                   src={item.cardImage.asset.url}
                   alt="hero background"
-                  fill
                   sizes={ImageSize.cardSize}
                 />
               )}

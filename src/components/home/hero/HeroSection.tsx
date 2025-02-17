@@ -140,10 +140,9 @@ const HeroSection = () => {
             <SwiperSlide className="swiperSlide-card">
               <div className="bg-container">
                 <div className="bg" />
-                <Image
+                <img
                   src={data[0]?.heroImage.asset.url}
                   alt="hero background"
-                  fill
                   sizes={ImageSize.bannerSizes}
                   style={{
                     objectPosition: `${data[0].heroImage.hotspot?.x * 100}% ${
@@ -165,10 +164,9 @@ const HeroSection = () => {
             <SwiperSlide className="swiperSlide-card">
               <div className="bg-container">
                 <div className="bg" />
-                <Image
+                <img
                   src={data[1]?.heroImage.asset.url}
                   alt="hero background"
-                  fill
                   sizes={ImageSize.bannerSizes}
                   style={{
                     objectPosition: `${data[1].heroImage.hotspot?.x * 100}% ${
@@ -190,10 +188,9 @@ const HeroSection = () => {
             <SwiperSlide className="swiperSlide-card">
               <div className="bg-container">
                 <div className="bg" />
-                <Image
+                <img
                   src={data[2]?.heroImage.asset.url}
                   alt="hero background"
-                  fill
                   sizes={ImageSize.bannerSizes}
                   style={{
                     objectPosition: `${data[2].heroImage.hotspot?.x * 100}% ${
@@ -215,10 +212,9 @@ const HeroSection = () => {
             <SwiperSlide className="swiperSlide-card">
               <div className="bg-container">
                 <div className="bg" />
-                <Image
+                <img
                   src={data[3]?.heroImage.asset.url}
                   alt="hero background"
-                  fill
                   sizes={ImageSize.bannerSizes}
                   style={{
                     objectPosition: `${data[3].heroImage.hotspot?.x * 100}% ${
@@ -240,10 +236,9 @@ const HeroSection = () => {
             <SwiperSlide className="swiperSlide-card">
               <div className="bg-container">
                 <div className="bg" />
-                <Image
+                <img
                   src={data[4]?.heroImage.asset.url}
                   alt="hero background"
-                  fill
                   sizes={ImageSize.bannerSizes}
                   style={{
                     objectPosition: `${data[4].heroImage.hotspot?.x * 100}% ${

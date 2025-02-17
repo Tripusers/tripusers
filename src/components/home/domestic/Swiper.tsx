@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import { Domestic } from "@/src/types/domestic";
@@ -43,10 +42,9 @@ const SwiperContainer = ({ data }: { data: Domestic[] }) => {
           <SwiperSlide key={index} className="swiperSlide-card">
             <Link href={`/domestic/${item.slug}`} key={index}>
               {item.cardImage && (
-                <Image
+                <img
                   src={item.cardImage.asset.url}
                   alt="hero background"
-                  fill
                   sizes={ImageSize.cardSize}
                 />
               )}

@@ -17,7 +17,6 @@ import { Accordion, AccordionItem as Item } from "@szhsin/react-accordion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import Image from "next/image";
 import Link from "next/link";
 import { wildlifePackage } from "@/src/types/wildlife";
 import SlugForm from "@/src/components/slugForm/SlugForm";
@@ -101,10 +100,9 @@ const page = ({ params }: Props) => {
                   <div className="bg-container">
                     <div className="bg" />
                     {item.url && (
-                      <Image
+                      <img
                         src={item.url}
                         alt="hero background"
-                        fill
                         sizes={ImageSize.bannerSizes}
                         style={{
                           objectPosition: `${item.hotspot?.x * 100}% ${
@@ -242,10 +240,9 @@ const page = ({ params }: Props) => {
                             <div className="images-container">
                               {content.images.map((img, index) => (
                                 <div key={index} className="img-container">
-                                  <Image
+                                  <img
                                     src={img.url}
                                     alt="hero background"
-                                    fill
                                     sizes={ImageSize.cardSize}
                                   />
                                 </div>

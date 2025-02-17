@@ -17,13 +17,11 @@ import { Accordion, AccordionItem as Item } from "@szhsin/react-accordion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import Image from "next/image";
 import Link from "next/link";
 import { DomesticPackages } from "@/src/types/domestic";
 import SlugForm from "@/src/components/slugForm/SlugForm";
 import ImageSize from "@/src/utils/image-utils";
 import iconsData from "@/src/utils/icons-utils";
-import { SaveSvgLeft, SaveSvgRight } from "@/src/components/Icons/SaveSvg";
 import SaveMoney from "@/src/components/saveMoney/SaveMoney";
 import EndOfTrip from "@/src/components/endOfTrip/EndOfTrip";
 
@@ -100,10 +98,9 @@ const page = ({ params }: Props) => {
               <SwiperSlide key={index} className="swiperSlide-card">
                 <div className="bg-container">
                   <div className="bg" />
-                  <Image
+                  <img
                     src={item.url}
                     alt="hero background"
-                    fill
                     sizes={ImageSize.bannerSizes}
                     style={{
                       objectPosition: `${item.hotspot?.x * 100}% ${
@@ -241,10 +238,9 @@ const page = ({ params }: Props) => {
                             <div className="images-container">
                               {content.images.map((img, index) => (
                                 <div key={index} className="img-container">
-                                  <Image
+                                  <img
                                     src={img.url}
                                     alt="hero background"
-                                    fill
                                     sizes={ImageSize.cardSize}
                                   />
                                 </div>

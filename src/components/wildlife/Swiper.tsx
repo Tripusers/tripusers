@@ -6,7 +6,6 @@ import { Navigation, EffectFade, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import Image from "next/image";
 import { wildLife } from "@/src/types/wildlife";
 import ImageSize from "@/src/utils/image-utils";
 
@@ -32,10 +31,9 @@ const SwiperHero = ({ data, title }: { data: wildLife[]; title: string }) => {
           <SwiperSlide key={index} className="swiperSlide-card">
             <div className="bg-container">
               <div className="bg" />
-              <Image
+              <img
                 src={item.cardImage.asset.url}
                 alt="hero background"
-                fill
                 sizes={ImageSize.bannerSizes}
                 style={{
                   objectPosition: `${item.cardImage.hotspot?.x * 100}% ${

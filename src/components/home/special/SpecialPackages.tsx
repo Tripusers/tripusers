@@ -8,7 +8,6 @@ import { Navigation, Autoplay, EffectCoverflow } from "swiper/modules";
 import { useEffect, useState } from "react";
 import { special } from "@/src/types/special";
 import { getSpecial, getTrending } from "@/src/sanity/sanity-utils";
-import Image from "next/image";
 import Link from "next/link";
 
 import "swiper/css";
@@ -69,10 +68,9 @@ const SpecialPackages = () => {
             {specialData.map((item, index) => (
               <SwiperSlide key={index} className="swiperSlide-card">
                 <Link href={`/special/${item.slug}`} className="bg-container">
-                  <Image
+                  <img
                     src={item.cardImage}
                     alt="hero background"
-                    fill
                     sizes={ImageSize.bannerSizes}
                   />
                   {item.cardTitle && item.cardSubtitle && (

@@ -4,7 +4,6 @@ import { BsFillRecordCircleFill } from "react-icons/bs";
 import { MdJoinFull } from "react-icons/md";
 import { HiEye } from "react-icons/hi";
 import { BsFillRocketTakeoffFill } from "react-icons/bs";
-import Image from "next/image";
 import "./style.scss";
 import { About } from "@/src/types/about";
 import { useEffect, useState } from "react";
@@ -56,10 +55,9 @@ const page = () => {
         <div className="img-container">
           {aboutData?.bannerImage && (
             <>
-              <Image
+              <img
                 src={aboutData?.bannerImage}
                 alt="contact hero image"
-                fill
                 sizes={ImageSize.bannerSizes}
               />
               <div className="bg" />
@@ -91,30 +89,27 @@ const page = () => {
             >
               <SwiperSlide className="swiperSlide-card">
                 <div className="img-container">
-                  <Image
+                  <img
                     src={aboutData.imageOne}
                     alt="hero background"
-                    fill
                     sizes={ImageSize.cardSize}
                   />
                 </div>
               </SwiperSlide>
               <SwiperSlide className="swiperSlide-card">
                 <div className="img-container">
-                  <Image
+                  <img
                     src={aboutData.imageTwo}
                     alt="hero background"
-                    fill
                     sizes={ImageSize.cardSize}
                   />
                 </div>
               </SwiperSlide>
               <SwiperSlide className="swiperSlide-card">
                 <div className="img-container">
-                  <Image
+                  <img
                     src={aboutData.imageThree}
                     alt="hero background"
-                    fill
                     sizes={ImageSize.cardSize}
                   />
                 </div>
@@ -123,26 +118,23 @@ const page = () => {
           ) : (
             <div className="images-container">
               <div className="img-container">
-                <Image
+                <img
                   src={aboutData.imageOne}
                   alt="hero background"
-                  fill
                   sizes={ImageSize.cardSize}
                 />
               </div>
               <div className="img-container">
-                <Image
+                <img
                   src={aboutData.imageTwo}
                   alt="hero background"
-                  fill
                   sizes={ImageSize.cardSize}
                 />
               </div>
               <div className="img-container">
-                <Image
+                <img
                   src={aboutData.imageThree}
                   alt="hero background"
-                  fill
                   sizes={ImageSize.cardSize}
                 />
               </div>
@@ -199,7 +191,7 @@ const page = () => {
       <section id="infographics">
         {dataInfo.map((item, index) => (
           <div key={index} className="info">
-            <Image src={item.icon} alt="icon" width={20} height={20} />
+            <img src={item.icon} alt="icon" width={20} height={20} />
             <p>
               {item.title}
               <span>{item.subtitle}</span>

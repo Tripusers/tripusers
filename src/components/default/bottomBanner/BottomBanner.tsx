@@ -4,7 +4,6 @@ import { getBottomBanner } from "@/src/sanity/sanity-utils";
 import { footer } from "@/src/types/footer";
 import { useEffect, useState } from "react";
 import "./style.scss";
-import Image from "next/image";
 import ImageSize from "@/src/utils/image-utils";
 import CustomiseForm from "../../forms/CustomiseForm";
 
@@ -38,10 +37,9 @@ const BottomBanner = () => {
         </div>
         <div className="bottom">
           <div className="img-cont">
-            <Image
+            <img
               src={data.bottomBanner.image}
               alt="banner image"
-              fill
               sizes={ImageSize.cardSize}
             />
           </div>

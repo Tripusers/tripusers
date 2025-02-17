@@ -5,7 +5,6 @@ import "./style.scss";
 import { PrivacyPolicyAndTnc } from "@/src/types/privacyPolicyAndTnc";
 import { getPrivacyPolicyAndTnc } from "@/src/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
-import Image from "next/image";
 import ImageSize from "@/src/utils/image-utils";
 
 const page = () => {
@@ -32,10 +31,9 @@ const page = () => {
         <div className="img-container">
           {privacyPolicyAndTnc?.privacyPolicy.bannerImage && (
             <>
-              <Image
+              <img
                 src={privacyPolicyAndTnc?.privacyPolicy.bannerImage}
                 alt="contact hero image"
-                fill
                 sizes={ImageSize.bannerSizes}
               />
               <div className="bg" />

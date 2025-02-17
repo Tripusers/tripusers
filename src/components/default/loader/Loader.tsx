@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import "./style.scss";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -54,19 +54,17 @@ const Loader = () => {
             className="loader-container"
           >
             <div className="img-container">
-              <Image
+              <img
                 src={logoAnim}
                 alt="loading animation"
-                fill
                 sizes={ImageSize.cardSize}
                 fetchPriority="high"
               />
             </div>
             <div className="travel-container">
-              <Image
+              <img
                 src={travelAnim}
                 alt="loading animation"
-                fill
                 sizes={ImageSize.cardSize}
                 fetchPriority="high"
               />

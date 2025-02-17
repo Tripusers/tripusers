@@ -16,7 +16,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 
-import Image from "next/image";
 import Link from "next/link";
 import { special } from "@/src/types/special";
 import ImageSize from "@/src/utils/image-utils";
@@ -117,10 +116,9 @@ const page = ({ params }: Props) => {
               <SwiperSlide key={index} className="swiperSlide-card">
                 <div className="bg-container">
                   <div className="bg" />
-                  <Image
+                  <img
                     src={item.url}
                     alt="hero background"
-                    fill
                     sizes={ImageSize.bannerSizes}
                     style={{
                       objectPosition: `${item.hotspot?.x * 100}% ${
@@ -167,10 +165,9 @@ const page = ({ params }: Props) => {
                               className="swiperSlide-card"
                             >
                               <div className="bg-container">
-                                <Image
+                                <img
                                   src={item.url}
                                   alt="hero background"
-                                  fill
                                   sizes={ImageSize.cardSize}
                                 />
                               </div>
@@ -303,10 +300,9 @@ const page = ({ params }: Props) => {
                   data.mustDoThings.cards.map((item, i) => (
                     <div className="slide" key={i}>
                       <div className="card">
-                        <Image
+                        <img
                           src={item.image}
                           alt="card image"
-                          fill
                           sizes={ImageSize.cardSize}
                         />
                         <p>{item.title}</p>

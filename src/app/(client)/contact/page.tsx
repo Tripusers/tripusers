@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import "./style.scss";
 import { getContactUsInfo } from "@/src/sanity/sanity-utils";
 import Form from "@/src/components/contact/Form";
@@ -36,10 +35,9 @@ const Contact = () => {
         <div className="img-container">
           {contact?.bannerImage && (
             <>
-              <Image
+              <img
                 src={contact?.bannerImage}
                 alt="contact hero image"
-                fill
                 sizes={ImageSize.bannerSizes}
               />
               <div className="bg" />

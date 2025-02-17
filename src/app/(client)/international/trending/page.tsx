@@ -3,7 +3,6 @@
 import SwiperHero from "@/src/components/international/trending/Swiper";
 import { getTrendingInternational } from "@/src/sanity/sanity-utils";
 import "../style.scss";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { international } from "@/src/types/international";
@@ -42,10 +41,9 @@ const page = () => {
             >
               <div className="img-container">
                 {data?.cardImage && (
-                  <Image
+                  <img
                     src={data.cardImage.asset.url}
                     alt="hero background"
-                    fill
                     sizes={ImageSize.cardSize}
                   />
                 )}

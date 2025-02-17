@@ -11,7 +11,6 @@ import {
 } from "@/src/sanity/sanity-utils";
 import { Navigation, Autoplay, EffectCards, EffectFade } from "swiper/modules";
 import Link from "next/link";
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -115,10 +114,9 @@ const Testimonials = () => {
               >
                 <Link href={`/testimonials/${data.slug}`}>
                   {data && data.cardImage && (
-                    <Image
+                    <img
                       src={data.cardImage.asset.url}
                       alt="hero background"
-                      fill
                       sizes={ImageSize.cardSize}
                     />
                   )}
@@ -175,10 +173,9 @@ const Testimonials = () => {
                   <div className="profile">
                     <div className="img-container">
                       {data.profile.image ? (
-                        <Image
+                        <img
                           src={data.profile.image}
                           alt="hero background"
-                          fill
                           sizes={ImageSize.cardSize}
                         />
                       ) : (
