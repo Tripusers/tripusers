@@ -8,6 +8,7 @@ import Link from "next/link";
 import { wildLife } from "@/src/types/wildlife";
 import { useEffect, useState } from "react";
 import { trending } from "@/src/types/trending";
+import Slick from "@/src/components/home/slick/Slick";
 
 const WildLife = () => {
   const [wildlife, setWildlife] = useState<wildLife[]>();
@@ -37,7 +38,7 @@ const WildLife = () => {
         <p>{trending?.wildlifeSubtitle}</p>
         <Link href="/wild-life">View All</Link>
       </div>
-      {wildlife && <SwiperContainer data={wildlife} />}
+      {wildlife && <Slick data={wildlife} />}
     </section>
   );
 };

@@ -1,4 +1,6 @@
 import { Domestic } from "@/src/types/domestic";
+import { international } from "@/src/types/international";
+import { wildLife } from "@/src/types/wildlife";
 import ImageSize from "@/src/utils/image-utils";
 import Link from "next/link";
 import Slider from "react-slick";
@@ -10,7 +12,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
-const Slick = ({ data }: { data: Domestic[] }) => {
+const Slick = ({
+  data,
+}: {
+  data: Domestic[] | international[] | wildLife[];
+}) => {
   function SampleNextArrow(props: CustomArrowProps) {
     const { className, style, onClick } = props;
     return (
@@ -37,7 +43,7 @@ const Slick = ({ data }: { data: Domestic[] }) => {
 
   const settings = {
     infinite: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 4000,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
@@ -91,12 +97,30 @@ const Slick = ({ data }: { data: Domestic[] }) => {
               )}
               <div className="text_container">
                 <h3>{item.name}</h3>
-                {item.domesticPackages && (
+                {"domesticPackages" in item && (
                   <p>
                     Starts from ₹{" "}
                     {item.domesticPackages.length == 0
                       ? 1500
                       : item.domesticPackages[0].price.toLocaleString("en-IN")}
+                  </p>
+                )}
+                {"internationalPackages" in item && (
+                  <p>
+                    Starts from ₹{" "}
+                    {item.internationalPackages.length == 0
+                      ? 1500
+                      : item.internationalPackages[0].price.toLocaleString(
+                          "en-IN"
+                        )}
+                  </p>
+                )}
+                {"wildlifePackage" in item && (
+                  <p>
+                    Starts from ₹{" "}
+                    {item.wildlifePackage.length == 0
+                      ? 1500
+                      : item.wildlifePackage[0].price.toLocaleString("en-IN")}
                   </p>
                 )}
               </div>

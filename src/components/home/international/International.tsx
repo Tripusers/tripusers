@@ -8,6 +8,7 @@ import "@/src/components/home/domestic/style.scss";
 import { HiLocationMarker } from "react-icons/hi";
 import SwiperContainer from "./Swiper";
 import Link from "next/link";
+import Slick from "@/src/components/home/slick/Slick";
 
 import { useEffect, useState } from "react";
 import { trending } from "@/src/types/trending";
@@ -41,7 +42,7 @@ const International = () => {
         <p>{trending?.internationalSliderSubtitle}</p>
         <Link href="/international">View All</Link>
       </div>
-      {international && <SwiperContainer data={international} />}
+      {international && <Slick data={international} />}
     </section>
   );
 };
