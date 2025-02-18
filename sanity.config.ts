@@ -13,7 +13,7 @@ const config = defineConfig({
 
   plugins: [structureTool(), visionTool(), unsplashImageAsset()],
   schema: { types: schemas },
-  useCdn: true,
+  useCdn: false,
 });
 
 export default config;

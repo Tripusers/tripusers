@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "pages/studio/**.js": {
+      "maxDuration": 30
+    }
+  }
+}
