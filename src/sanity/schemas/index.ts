@@ -36,7 +36,7 @@ const schemas = [
   testimonials,
   footer,
   privacyPolicyAndTnc,
-  itinerary,
+  //itinerary,
 ];
 
 export default schemas;
