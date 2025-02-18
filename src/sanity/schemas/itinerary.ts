@@ -80,14 +80,24 @@ const itinerary = {
       validation: (Rule: any) => Rule.required(),
     },
     {
-      name: "activities",
-      title: "No of Activities",
-      type: "number",
+      name: "isHotels",
+      title: "Is Hotels",
+      type: "boolean",
     },
     {
-      name: "hotels",
-      title: "No of Hotels",
-      type: "number",
+      name: "isFlight",
+      title: "Is Flight",
+      type: "boolean",
+    },
+    {
+      name: "isTransfer",
+      title: "Is Transfer",
+      type: "boolean",
+    },
+    {
+      name: "isSightseeing",
+      title: "Is Sightseeing",
+      type: "boolean",
     },
     {
       name: "price",

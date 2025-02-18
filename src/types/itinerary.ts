@@ -22,8 +22,10 @@ export type Itinerary = {
     days: number;
     nights?: number;
     itineraryTitle: string;
-    activities?: number;
-    hotels?: number;
+    isSightseeing?: boolean;
+    isHotels?: boolean;
+    isFlight?: boolean;
+    isTransfer?: boolean;
     price: number;
     priceActual: number;
     coverImages: {
