@@ -1,6 +1,6 @@
 {
   "functions": {
-    "pages/studio/**.js": {
+    "app/studio/[[...index]]/page.js": {
       "maxDuration": 30
     }
   }
